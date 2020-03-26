@@ -1,0 +1,732 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AB3111532416E39500B655DE /* NSNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3111512416E39300B655DE /* NSNotification.h */; };
+		AB3111542416E39500B655DE /* NSNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB3111522416E39400B655DE /* NSNotification.mm */; };
+		AB31116F24181EDF00B655DE /* ICloudNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = AB31116D24181EDF00B655DE /* ICloudNotifications.h */; };
+		AB31117024181EDF00B655DE /* ICloudNotifications.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB31116E24181EDF00B655DE /* ICloudNotifications.mm */; };
+		AB31117324181EFC00B655DE /* UbiquityIdentityToken.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB31117124181EFC00B655DE /* UbiquityIdentityToken.mm */; };
+		AB31117424181EFC00B655DE /* UbiquityIdentityToken.h in Headers */ = {isa = PBXBuildFile; fileRef = AB31117224181EFC00B655DE /* UbiquityIdentityToken.h */; };
+		AB37EC9823F49B6F0000F92E /* CKModifyRecordsOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC5423F49B690000F92E /* CKModifyRecordsOperation.mm */; };
+		AB37EC9923F49B6F0000F92E /* CKContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5523F49B690000F92E /* CKContainer.h */; };
+		AB37EC9A23F49B6F0000F92E /* CKFetchRecordZoneChangesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5623F49B690000F92E /* CKFetchRecordZoneChangesOperation.h */; };
+		AB37EC9B23F49B6F0000F92E /* CKNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5723F49B690000F92E /* CKNotification.h */; };
+		AB37EC9C23F49B6F0000F92E /* CKNotificationID.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5823F49B690000F92E /* CKNotificationID.h */; };
+		AB37EC9D23F49B6F0000F92E /* CKDiscoverUserIdentitiesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC5923F49B690000F92E /* CKDiscoverUserIdentitiesOperation.mm */; };
+		AB37EC9E23F49B6F0000F92E /* CKFetchRecordZonesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5A23F49B690000F92E /* CKFetchRecordZonesOperation.h */; };
+		AB37EC9F23F49B6F0000F92E /* CKFetchRecordsOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC5B23F49B690000F92E /* CKFetchRecordsOperation.mm */; };
+		AB37ECA023F49B6F0000F92E /* CKQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5C23F49B690000F92E /* CKQuery.h */; };
+		AB37ECA123F49B6F0000F92E /* Callbacks.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5D23F49B690000F92E /* Callbacks.h */; };
+		AB37ECA223F49B6F0000F92E /* CKAsset.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC5E23F49B690000F92E /* CKAsset.mm */; };
+		AB37ECA323F49B6F0000F92E /* Converters.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC5F23F49B690000F92E /* Converters.h */; };
+		AB37ECA423F49B6F0000F92E /* CKFetchRecordZoneChangesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6023F49B690000F92E /* CKFetchRecordZoneChangesOperation.mm */; };
+		AB37ECA523F49B6F0000F92E /* CKDiscoverUserIdentitiesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC6123F49B690000F92E /* CKDiscoverUserIdentitiesOperation.h */; };
+		AB37ECA623F49B6F0000F92E /* CKSubscriptionID.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6223F49B6A0000F92E /* CKSubscriptionID.mm */; };
+		AB37ECA723F49B6F0000F92E /* NSPersonNameComponents.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6323F49B6A0000F92E /* NSPersonNameComponents.mm */; };
+		AB37ECA823F49B6F0000F92E /* CKNotificationInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6423F49B6A0000F92E /* CKNotificationInfo.mm */; };
+		AB37ECA923F49B6F0000F92E /* NSPredicate.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6523F49B6A0000F92E /* NSPredicate.mm */; };
+		AB37ECAA23F49B6F0000F92E /* CKFetchDatabaseChangesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6623F49B6A0000F92E /* CKFetchDatabaseChangesOperation.mm */; };
+		AB37ECAB23F49B6F0000F92E /* CKUserIdentityLookupInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC6723F49B6A0000F92E /* CKUserIdentityLookupInfo.h */; };
+		AB37ECAC23F49B6F0000F92E /* CKQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6823F49B6A0000F92E /* CKQuery.mm */; };
+		AB37ECAD23F49B6F0000F92E /* NSError.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC6923F49B6A0000F92E /* NSError.h */; };
+		AB37ECAE23F49B6F0000F92E /* CKFetchRecordsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC6A23F49B6A0000F92E /* CKFetchRecordsOperation.h */; };
+		AB37ECAF23F49B6F0000F92E /* NSError.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6B23F49B6A0000F92E /* NSError.mm */; };
+		AB37ECB123F49B6F0000F92E /* CKUserIdentity.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6D23F49B6B0000F92E /* CKUserIdentity.mm */; };
+		AB37ECB223F49B6F0000F92E /* CKContainer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC6E23F49B6B0000F92E /* CKContainer.mm */; };
+		AB37ECB323F49B6F0000F92E /* NSCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC6F23F49B6B0000F92E /* NSCoder.h */; };
+		AB37ECB523F49B6F0000F92E /* CKAsset.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC7123F49B6B0000F92E /* CKAsset.h */; };
+		AB37ECB623F49B6F0000F92E /* CKUserIdentityLookupInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7223F49B6B0000F92E /* CKUserIdentityLookupInfo.mm */; };
+		AB37ECB723F49B6F0000F92E /* Converters.m in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7323F49B6B0000F92E /* Converters.m */; };
+		AB37ECB823F49B6F0000F92E /* CKFetchDatabaseChangesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC7423F49B6B0000F92E /* CKFetchDatabaseChangesOperation.h */; };
+		AB37ECB923F49B6F0000F92E /* CKOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC7523F49B6C0000F92E /* CKOperation.h */; };
+		AB37ECBA23F49B6F0000F92E /* CKOperationConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC7623F49B6C0000F92E /* CKOperationConfiguration.h */; };
+		AB37ECBB23F49B6F0000F92E /* CKDatabaseOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7723F49B6C0000F92E /* CKDatabaseOperation.mm */; };
+		AB37ECBC23F49B6F0000F92E /* CKUserIdentity.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC7823F49B6C0000F92E /* CKUserIdentity.h */; };
+		AB37ECBE23F49B6F0000F92E /* CKNotificationInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC7A23F49B6C0000F92E /* CKNotificationInfo.h */; };
+		AB37ECBF23F49B6F0000F92E /* CKOperationConfiguration.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7B23F49B6C0000F92E /* CKOperationConfiguration.mm */; };
+		AB37ECC023F49B6F0000F92E /* CKOperationGroup.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7C23F49B6C0000F92E /* CKOperationGroup.mm */; };
+		AB37ECC123F49B6F0000F92E /* CKFetchShareParticipantsOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7D23F49B6C0000F92E /* CKFetchShareParticipantsOperation.mm */; };
+		AB37ECC223F49B6F0000F92E /* CKOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7E23F49B6D0000F92E /* CKOperation.mm */; };
+		AB37ECC323F49B6F0000F92E /* CKDatabaseNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC7F23F49B6D0000F92E /* CKDatabaseNotification.mm */; };
+		AB37ECC423F49B6F0000F92E /* CKAcceptSharesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC8023F49B6D0000F92E /* CKAcceptSharesOperation.mm */; };
+		AB37ECC523F49B6F0000F92E /* CKFetchShareParticipantsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8123F49B6D0000F92E /* CKFetchShareParticipantsOperation.h */; };
+		AB37ECC623F49B6F0000F92E /* NSPredicate.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8223F49B6D0000F92E /* NSPredicate.h */; };
+		AB37ECC723F49B6F0000F92E /* CKModifyRecordZonesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8323F49B6D0000F92E /* CKModifyRecordZonesOperation.h */; };
+		AB37ECC823F49B6F0000F92E /* NSPersonNameComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8423F49B6D0000F92E /* NSPersonNameComponents.h */; };
+		AB37ECC923F49B6F0000F92E /* CKAcceptSharesOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8523F49B6D0000F92E /* CKAcceptSharesOperation.h */; };
+		AB37ECCA23F49B6F0000F92E /* NSCoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC8623F49B6D0000F92E /* NSCoder.mm */; };
+		AB37ECCB23F49B6F0000F92E /* CKDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8723F49B6D0000F92E /* CKDatabase.h */; };
+		AB37ECCC23F49B6F0000F92E /* CKFetchShareMetadataOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8823F49B6E0000F92E /* CKFetchShareMetadataOperation.h */; };
+		AB37ECCD23F49B6F0000F92E /* CKOperationGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8923F49B6E0000F92E /* CKOperationGroup.h */; };
+		AB37ECCE23F49B6F0000F92E /* CKDatabaseNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8A23F49B6E0000F92E /* CKDatabaseNotification.h */; };
+		AB37ECD023F49B6F0000F92E /* CKFetchShareMetadataOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC8C23F49B6E0000F92E /* CKFetchShareMetadataOperation.mm */; };
+		AB37ECD123F49B6F0000F92E /* CKLocationSortDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8D23F49B6E0000F92E /* CKLocationSortDescriptor.h */; };
+		AB37ECD223F49B6F0000F92E /* CKModifyRecordsOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC8E23F49B6E0000F92E /* CKModifyRecordsOperation.h */; };
+		AB37ECD323F49B6F0000F92E /* CKNotificationID.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC8F23F49B6E0000F92E /* CKNotificationID.mm */; };
+		AB37ECD423F49B6F0000F92E /* CKDatabase.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC9023F49B6E0000F92E /* CKDatabase.mm */; };
+		AB37ECD523F49B6F0000F92E /* CKModifyRecordZonesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC9123F49B6E0000F92E /* CKModifyRecordZonesOperation.mm */; };
+		AB37ECD623F49B6F0000F92E /* NSURL.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC9223F49B6F0000F92E /* NSURL.h */; };
+		AB37ECD723F49B6F0000F92E /* CKDatabaseOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EC9323F49B6F0000F92E /* CKDatabaseOperation.h */; };
+		AB37ECD823F49B6F0000F92E /* NSURL.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC9423F49B6F0000F92E /* NSURL.mm */; };
+		AB37ECD923F49B6F0000F92E /* CKFetchRecordZonesOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC9523F49B6F0000F92E /* CKFetchRecordZonesOperation.mm */; };
+		AB37ECDA23F49B6F0000F92E /* CKLocationSortDescriptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC9623F49B6F0000F92E /* CKLocationSortDescriptor.mm */; };
+		AB37ECDB23F49B6F0000F92E /* CKNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EC9723F49B6F0000F92E /* CKNotification.mm */; };
+		AB37EDBD23F49E6E0000F92E /* CKRecordZone.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37ED9E23F49E670000F92E /* CKRecordZone.h */; };
+		AB37EDBE23F49E6E0000F92E /* CKQueryNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37ED9F23F49E670000F92E /* CKQueryNotification.h */; };
+		AB37EDBF23F49E6E0000F92E /* CKShareMetadata.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDA023F49E670000F92E /* CKShareMetadata.mm */; };
+		AB37EDC023F49E6E0000F92E /* CKRecordZone.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDA123F49E680000F92E /* CKRecordZone.mm */; };
+		AB37EDC123F49E6E0000F92E /* CKRecordZoneID.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDA223F49E680000F92E /* CKRecordZoneID.mm */; };
+		AB37EDC223F49E6E0000F92E /* CKRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDA323F49E680000F92E /* CKRecord.h */; };
+		AB37EDC323F49E6E0000F92E /* CKRecordZoneNotification.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDA423F49E680000F92E /* CKRecordZoneNotification.h */; };
+		AB37EDC423F49E6E0000F92E /* CKQueryOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDA523F49E680000F92E /* CKQueryOperation.h */; };
+		AB37EDC523F49E6E0000F92E /* CKShare.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDA623F49E690000F92E /* CKShare.h */; };
+		AB37EDC623F49E6E0000F92E /* CKShareMetadata.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDA723F49E690000F92E /* CKShareMetadata.h */; };
+		AB37EDC723F49E6E0000F92E /* CKQueryOperation.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDA823F49E690000F92E /* CKQueryOperation.mm */; };
+		AB37EDC823F49E6E0000F92E /* CKQueryNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDA923F49E6A0000F92E /* CKQueryNotification.mm */; };
+		AB37EDC923F49E6E0000F92E /* CKQuerySubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDAA23F49E6A0000F92E /* CKQuerySubscription.h */; };
+		AB37EDCA23F49E6E0000F92E /* CKRecord.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDAB23F49E6A0000F92E /* CKRecord.mm */; };
+		AB37EDCB23F49E6E0000F92E /* CKQuerySubscription.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDAC23F49E6B0000F92E /* CKQuerySubscription.mm */; };
+		AB37EDCC23F49E6E0000F92E /* CKRecordID.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDAD23F49E6B0000F92E /* CKRecordID.mm */; };
+		AB37EDCD23F49E6E0000F92E /* CKSubscriptionID.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDAE23F49E6B0000F92E /* CKSubscriptionID.h */; };
+		AB37EDCE23F49E6E0000F92E /* CKRecordZoneNotification.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDAF23F49E6B0000F92E /* CKRecordZoneNotification.mm */; };
+		AB37EDCF23F49E6E0000F92E /* CKQueryCursor.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDB023F49E6C0000F92E /* CKQueryCursor.mm */; };
+		AB37EDD023F49E6E0000F92E /* CKRecordID.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDB123F49E6C0000F92E /* CKRecordID.h */; };
+		AB37EDD123F49E6E0000F92E /* CKQueryCursor.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDB223F49E6C0000F92E /* CKQueryCursor.h */; };
+		AB37EDD223F49E6E0000F92E /* CKServerChangeToken.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDB323F49E6C0000F92E /* CKServerChangeToken.h */; };
+		AB37EDD323F49E6E0000F92E /* CKShare.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDB423F49E6D0000F92E /* CKShare.mm */; };
+		AB37EDD423F49E6E0000F92E /* CKRecordZoneID.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDB523F49E6D0000F92E /* CKRecordZoneID.h */; };
+		AB37EDD523F49E6E0000F92E /* CKReference.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDB623F49E6D0000F92E /* CKReference.mm */; };
+		AB37EDD623F49E6E0000F92E /* CKShareParticipant.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDB723F49E6D0000F92E /* CKShareParticipant.h */; };
+		AB37EDD723F49E6E0000F92E /* CKSubscription.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDB823F49E6D0000F92E /* CKSubscription.mm */; };
+		AB37EDD823F49E6E0000F92E /* CKShareParticipant.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDB923F49E6D0000F92E /* CKShareParticipant.mm */; };
+		AB37EDD923F49E6E0000F92E /* CKSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDBA23F49E6D0000F92E /* CKSubscription.h */; };
+		AB37EDDA23F49E6E0000F92E /* CKReference.h in Headers */ = {isa = PBXBuildFile; fileRef = AB37EDBB23F49E6D0000F92E /* CKReference.h */; };
+		AB37EDDB23F49E6E0000F92E /* CKServerChangeToken.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB37EDBC23F49E6E0000F92E /* CKServerChangeToken.mm */; };
+		AB37EDE223F4AAB40000F92E /* libHHCloudKit.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = AB37EC4823F49B440000F92E /* libHHCloudKit.a */; platformFilter = ios; };
+		AB5583FE2405EE2F00EE0573 /* NSSortDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = AB5583FC2405EE2F00EE0573 /* NSSortDescriptor.h */; };
+		AB5583FF2405EE2F00EE0573 /* NSSortDescriptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB5583FD2405EE2F00EE0573 /* NSSortDescriptor.mm */; };
+		AB58890C240D42F300B10456 /* NSException.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB58890A240D42F200B10456 /* NSException.mm */; };
+		AB58890D240D42F300B10456 /* NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = AB58890B240D42F200B10456 /* NSException.h */; };
+		AB7EFAF62412D5C500261550 /* NSUbiquitousKeyValueStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB7EFAF42412D5C400261550 /* NSUbiquitousKeyValueStore.mm */; };
+		AB7EFAF72412D5C500261550 /* NSUbiquitousKeyValueStore.h in Headers */ = {isa = PBXBuildFile; fileRef = AB7EFAF52412D5C500261550 /* NSUbiquitousKeyValueStore.h */; };
+		ABE0EB5E241A74B900C29997 /* NSFileManager.h in Headers */ = {isa = PBXBuildFile; fileRef = ABE0EB5C241A74B800C29997 /* NSFileManager.h */; };
+		ABE0EB5F241A74B900C29997 /* NSFileManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABE0EB5D241A74B800C29997 /* NSFileManager.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB37EDDF23F4A8950000F92E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "${PROJECT_DIR}/../../UnityCloudKitPlugin/Packages/CloudKit/Runtime/bin/iOS";
+			dstSubfolderSpec = 0;
+			files = (
+				AB37EDE223F4AAB40000F92E /* libHHCloudKit.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AB3111512416E39300B655DE /* NSNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSNotification.h; path = ../../Common/NSNotification.h; sourceTree = "<group>"; };
+		AB3111522416E39400B655DE /* NSNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSNotification.mm; path = ../../Common/NSNotification.mm; sourceTree = "<group>"; };
+		AB31116D24181EDF00B655DE /* ICloudNotifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICloudNotifications.h; path = ../../Common/ICloudNotifications.h; sourceTree = "<group>"; };
+		AB31116E24181EDF00B655DE /* ICloudNotifications.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ICloudNotifications.mm; path = ../../Common/ICloudNotifications.mm; sourceTree = "<group>"; };
+		AB31117124181EFC00B655DE /* UbiquityIdentityToken.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = UbiquityIdentityToken.mm; path = ../../Common/UbiquityIdentityToken.mm; sourceTree = "<group>"; };
+		AB31117224181EFC00B655DE /* UbiquityIdentityToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UbiquityIdentityToken.h; path = ../../Common/UbiquityIdentityToken.h; sourceTree = "<group>"; };
+		AB37EC4823F49B440000F92E /* libHHCloudKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHHCloudKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB37EC5423F49B690000F92E /* CKModifyRecordsOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKModifyRecordsOperation.mm; path = ../../Common/CKModifyRecordsOperation.mm; sourceTree = "<group>"; };
+		AB37EC5523F49B690000F92E /* CKContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKContainer.h; path = ../../Common/CKContainer.h; sourceTree = "<group>"; };
+		AB37EC5623F49B690000F92E /* CKFetchRecordZoneChangesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKFetchRecordZoneChangesOperation.h; path = ../../Common/CKFetchRecordZoneChangesOperation.h; sourceTree = "<group>"; };
+		AB37EC5723F49B690000F92E /* CKNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKNotification.h; path = ../../Common/CKNotification.h; sourceTree = "<group>"; };
+		AB37EC5823F49B690000F92E /* CKNotificationID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKNotificationID.h; path = ../../Common/CKNotificationID.h; sourceTree = "<group>"; };
+		AB37EC5923F49B690000F92E /* CKDiscoverUserIdentitiesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKDiscoverUserIdentitiesOperation.mm; path = ../../Common/CKDiscoverUserIdentitiesOperation.mm; sourceTree = "<group>"; };
+		AB37EC5A23F49B690000F92E /* CKFetchRecordZonesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKFetchRecordZonesOperation.h; path = ../../Common/CKFetchRecordZonesOperation.h; sourceTree = "<group>"; };
+		AB37EC5B23F49B690000F92E /* CKFetchRecordsOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKFetchRecordsOperation.mm; path = ../../Common/CKFetchRecordsOperation.mm; sourceTree = "<group>"; };
+		AB37EC5C23F49B690000F92E /* CKQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKQuery.h; path = ../../Common/CKQuery.h; sourceTree = "<group>"; };
+		AB37EC5D23F49B690000F92E /* Callbacks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Callbacks.h; path = ../../Common/Callbacks.h; sourceTree = "<group>"; };
+		AB37EC5E23F49B690000F92E /* CKAsset.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKAsset.mm; path = ../../Common/CKAsset.mm; sourceTree = "<group>"; };
+		AB37EC5F23F49B690000F92E /* Converters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Converters.h; path = ../../Common/Converters.h; sourceTree = "<group>"; };
+		AB37EC6023F49B690000F92E /* CKFetchRecordZoneChangesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKFetchRecordZoneChangesOperation.mm; path = ../../Common/CKFetchRecordZoneChangesOperation.mm; sourceTree = "<group>"; };
+		AB37EC6123F49B690000F92E /* CKDiscoverUserIdentitiesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKDiscoverUserIdentitiesOperation.h; path = ../../Common/CKDiscoverUserIdentitiesOperation.h; sourceTree = "<group>"; };
+		AB37EC6223F49B6A0000F92E /* CKSubscriptionID.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKSubscriptionID.mm; path = ../../Common/CKSubscriptionID.mm; sourceTree = "<group>"; };
+		AB37EC6323F49B6A0000F92E /* NSPersonNameComponents.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSPersonNameComponents.mm; path = ../../Common/NSPersonNameComponents.mm; sourceTree = "<group>"; };
+		AB37EC6423F49B6A0000F92E /* CKNotificationInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKNotificationInfo.mm; path = ../../Common/CKNotificationInfo.mm; sourceTree = "<group>"; };
+		AB37EC6523F49B6A0000F92E /* NSPredicate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSPredicate.mm; path = ../../Common/NSPredicate.mm; sourceTree = "<group>"; };
+		AB37EC6623F49B6A0000F92E /* CKFetchDatabaseChangesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKFetchDatabaseChangesOperation.mm; path = ../../Common/CKFetchDatabaseChangesOperation.mm; sourceTree = "<group>"; };
+		AB37EC6723F49B6A0000F92E /* CKUserIdentityLookupInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKUserIdentityLookupInfo.h; path = ../../Common/CKUserIdentityLookupInfo.h; sourceTree = "<group>"; };
+		AB37EC6823F49B6A0000F92E /* CKQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKQuery.mm; path = ../../Common/CKQuery.mm; sourceTree = "<group>"; };
+		AB37EC6923F49B6A0000F92E /* NSError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSError.h; path = ../../Common/NSError.h; sourceTree = "<group>"; };
+		AB37EC6A23F49B6A0000F92E /* CKFetchRecordsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKFetchRecordsOperation.h; path = ../../Common/CKFetchRecordsOperation.h; sourceTree = "<group>"; };
+		AB37EC6B23F49B6A0000F92E /* NSError.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSError.mm; path = ../../Common/NSError.mm; sourceTree = "<group>"; };
+		AB37EC6D23F49B6B0000F92E /* CKUserIdentity.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKUserIdentity.mm; path = ../../Common/CKUserIdentity.mm; sourceTree = "<group>"; };
+		AB37EC6E23F49B6B0000F92E /* CKContainer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKContainer.mm; path = ../../Common/CKContainer.mm; sourceTree = "<group>"; };
+		AB37EC6F23F49B6B0000F92E /* NSCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSCoder.h; path = ../../Common/NSCoder.h; sourceTree = "<group>"; };
+		AB37EC7123F49B6B0000F92E /* CKAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKAsset.h; path = ../../Common/CKAsset.h; sourceTree = "<group>"; };
+		AB37EC7223F49B6B0000F92E /* CKUserIdentityLookupInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKUserIdentityLookupInfo.mm; path = ../../Common/CKUserIdentityLookupInfo.mm; sourceTree = "<group>"; };
+		AB37EC7323F49B6B0000F92E /* Converters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Converters.m; path = ../../Common/Converters.m; sourceTree = "<group>"; };
+		AB37EC7423F49B6B0000F92E /* CKFetchDatabaseChangesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKFetchDatabaseChangesOperation.h; path = ../../Common/CKFetchDatabaseChangesOperation.h; sourceTree = "<group>"; };
+		AB37EC7523F49B6C0000F92E /* CKOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKOperation.h; path = ../../Common/CKOperation.h; sourceTree = "<group>"; };
+		AB37EC7623F49B6C0000F92E /* CKOperationConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKOperationConfiguration.h; path = ../../Common/CKOperationConfiguration.h; sourceTree = "<group>"; };
+		AB37EC7723F49B6C0000F92E /* CKDatabaseOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKDatabaseOperation.mm; path = ../../Common/CKDatabaseOperation.mm; sourceTree = "<group>"; };
+		AB37EC7823F49B6C0000F92E /* CKUserIdentity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKUserIdentity.h; path = ../../Common/CKUserIdentity.h; sourceTree = "<group>"; };
+		AB37EC7A23F49B6C0000F92E /* CKNotificationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKNotificationInfo.h; path = ../../Common/CKNotificationInfo.h; sourceTree = "<group>"; };
+		AB37EC7B23F49B6C0000F92E /* CKOperationConfiguration.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKOperationConfiguration.mm; path = ../../Common/CKOperationConfiguration.mm; sourceTree = "<group>"; };
+		AB37EC7C23F49B6C0000F92E /* CKOperationGroup.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKOperationGroup.mm; path = ../../Common/CKOperationGroup.mm; sourceTree = "<group>"; };
+		AB37EC7D23F49B6C0000F92E /* CKFetchShareParticipantsOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKFetchShareParticipantsOperation.mm; path = ../../Common/CKFetchShareParticipantsOperation.mm; sourceTree = "<group>"; };
+		AB37EC7E23F49B6D0000F92E /* CKOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKOperation.mm; path = ../../Common/CKOperation.mm; sourceTree = "<group>"; };
+		AB37EC7F23F49B6D0000F92E /* CKDatabaseNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKDatabaseNotification.mm; path = ../../Common/CKDatabaseNotification.mm; sourceTree = "<group>"; };
+		AB37EC8023F49B6D0000F92E /* CKAcceptSharesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKAcceptSharesOperation.mm; path = ../../Common/CKAcceptSharesOperation.mm; sourceTree = "<group>"; };
+		AB37EC8123F49B6D0000F92E /* CKFetchShareParticipantsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKFetchShareParticipantsOperation.h; path = ../../Common/CKFetchShareParticipantsOperation.h; sourceTree = "<group>"; };
+		AB37EC8223F49B6D0000F92E /* NSPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSPredicate.h; path = ../../Common/NSPredicate.h; sourceTree = "<group>"; };
+		AB37EC8323F49B6D0000F92E /* CKModifyRecordZonesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKModifyRecordZonesOperation.h; path = ../../Common/CKModifyRecordZonesOperation.h; sourceTree = "<group>"; };
+		AB37EC8423F49B6D0000F92E /* NSPersonNameComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSPersonNameComponents.h; path = ../../Common/NSPersonNameComponents.h; sourceTree = "<group>"; };
+		AB37EC8523F49B6D0000F92E /* CKAcceptSharesOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKAcceptSharesOperation.h; path = ../../Common/CKAcceptSharesOperation.h; sourceTree = "<group>"; };
+		AB37EC8623F49B6D0000F92E /* NSCoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSCoder.mm; path = ../../Common/NSCoder.mm; sourceTree = "<group>"; };
+		AB37EC8723F49B6D0000F92E /* CKDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKDatabase.h; path = ../../Common/CKDatabase.h; sourceTree = "<group>"; };
+		AB37EC8823F49B6E0000F92E /* CKFetchShareMetadataOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKFetchShareMetadataOperation.h; path = ../../Common/CKFetchShareMetadataOperation.h; sourceTree = "<group>"; };
+		AB37EC8923F49B6E0000F92E /* CKOperationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKOperationGroup.h; path = ../../Common/CKOperationGroup.h; sourceTree = "<group>"; };
+		AB37EC8A23F49B6E0000F92E /* CKDatabaseNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKDatabaseNotification.h; path = ../../Common/CKDatabaseNotification.h; sourceTree = "<group>"; };
+		AB37EC8C23F49B6E0000F92E /* CKFetchShareMetadataOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKFetchShareMetadataOperation.mm; path = ../../Common/CKFetchShareMetadataOperation.mm; sourceTree = "<group>"; };
+		AB37EC8D23F49B6E0000F92E /* CKLocationSortDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKLocationSortDescriptor.h; path = ../../Common/CKLocationSortDescriptor.h; sourceTree = "<group>"; };
+		AB37EC8E23F49B6E0000F92E /* CKModifyRecordsOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKModifyRecordsOperation.h; path = ../../Common/CKModifyRecordsOperation.h; sourceTree = "<group>"; };
+		AB37EC8F23F49B6E0000F92E /* CKNotificationID.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKNotificationID.mm; path = ../../Common/CKNotificationID.mm; sourceTree = "<group>"; };
+		AB37EC9023F49B6E0000F92E /* CKDatabase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKDatabase.mm; path = ../../Common/CKDatabase.mm; sourceTree = "<group>"; };
+		AB37EC9123F49B6E0000F92E /* CKModifyRecordZonesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKModifyRecordZonesOperation.mm; path = ../../Common/CKModifyRecordZonesOperation.mm; sourceTree = "<group>"; };
+		AB37EC9223F49B6F0000F92E /* NSURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSURL.h; path = ../../Common/NSURL.h; sourceTree = "<group>"; };
+		AB37EC9323F49B6F0000F92E /* CKDatabaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKDatabaseOperation.h; path = ../../Common/CKDatabaseOperation.h; sourceTree = "<group>"; };
+		AB37EC9423F49B6F0000F92E /* NSURL.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSURL.mm; path = ../../Common/NSURL.mm; sourceTree = "<group>"; };
+		AB37EC9523F49B6F0000F92E /* CKFetchRecordZonesOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKFetchRecordZonesOperation.mm; path = ../../Common/CKFetchRecordZonesOperation.mm; sourceTree = "<group>"; };
+		AB37EC9623F49B6F0000F92E /* CKLocationSortDescriptor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKLocationSortDescriptor.mm; path = ../../Common/CKLocationSortDescriptor.mm; sourceTree = "<group>"; };
+		AB37EC9723F49B6F0000F92E /* CKNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKNotification.mm; path = ../../Common/CKNotification.mm; sourceTree = "<group>"; };
+		AB37ED9E23F49E670000F92E /* CKRecordZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKRecordZone.h; path = ../../Common/CKRecordZone.h; sourceTree = "<group>"; };
+		AB37ED9F23F49E670000F92E /* CKQueryNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKQueryNotification.h; path = ../../Common/CKQueryNotification.h; sourceTree = "<group>"; };
+		AB37EDA023F49E670000F92E /* CKShareMetadata.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKShareMetadata.mm; path = ../../Common/CKShareMetadata.mm; sourceTree = "<group>"; };
+		AB37EDA123F49E680000F92E /* CKRecordZone.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKRecordZone.mm; path = ../../Common/CKRecordZone.mm; sourceTree = "<group>"; };
+		AB37EDA223F49E680000F92E /* CKRecordZoneID.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKRecordZoneID.mm; path = ../../Common/CKRecordZoneID.mm; sourceTree = "<group>"; };
+		AB37EDA323F49E680000F92E /* CKRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKRecord.h; path = ../../Common/CKRecord.h; sourceTree = "<group>"; };
+		AB37EDA423F49E680000F92E /* CKRecordZoneNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKRecordZoneNotification.h; path = ../../Common/CKRecordZoneNotification.h; sourceTree = "<group>"; };
+		AB37EDA523F49E680000F92E /* CKQueryOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKQueryOperation.h; path = ../../Common/CKQueryOperation.h; sourceTree = "<group>"; };
+		AB37EDA623F49E690000F92E /* CKShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKShare.h; path = ../../Common/CKShare.h; sourceTree = "<group>"; };
+		AB37EDA723F49E690000F92E /* CKShareMetadata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKShareMetadata.h; path = ../../Common/CKShareMetadata.h; sourceTree = "<group>"; };
+		AB37EDA823F49E690000F92E /* CKQueryOperation.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKQueryOperation.mm; path = ../../Common/CKQueryOperation.mm; sourceTree = "<group>"; };
+		AB37EDA923F49E6A0000F92E /* CKQueryNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKQueryNotification.mm; path = ../../Common/CKQueryNotification.mm; sourceTree = "<group>"; };
+		AB37EDAA23F49E6A0000F92E /* CKQuerySubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKQuerySubscription.h; path = ../../Common/CKQuerySubscription.h; sourceTree = "<group>"; };
+		AB37EDAB23F49E6A0000F92E /* CKRecord.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKRecord.mm; path = ../../Common/CKRecord.mm; sourceTree = "<group>"; };
+		AB37EDAC23F49E6B0000F92E /* CKQuerySubscription.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKQuerySubscription.mm; path = ../../Common/CKQuerySubscription.mm; sourceTree = "<group>"; };
+		AB37EDAD23F49E6B0000F92E /* CKRecordID.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKRecordID.mm; path = ../../Common/CKRecordID.mm; sourceTree = "<group>"; };
+		AB37EDAE23F49E6B0000F92E /* CKSubscriptionID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKSubscriptionID.h; path = ../../Common/CKSubscriptionID.h; sourceTree = "<group>"; };
+		AB37EDAF23F49E6B0000F92E /* CKRecordZoneNotification.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKRecordZoneNotification.mm; path = ../../Common/CKRecordZoneNotification.mm; sourceTree = "<group>"; };
+		AB37EDB023F49E6C0000F92E /* CKQueryCursor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKQueryCursor.mm; path = ../../Common/CKQueryCursor.mm; sourceTree = "<group>"; };
+		AB37EDB123F49E6C0000F92E /* CKRecordID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKRecordID.h; path = ../../Common/CKRecordID.h; sourceTree = "<group>"; };
+		AB37EDB223F49E6C0000F92E /* CKQueryCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKQueryCursor.h; path = ../../Common/CKQueryCursor.h; sourceTree = "<group>"; };
+		AB37EDB323F49E6C0000F92E /* CKServerChangeToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKServerChangeToken.h; path = ../../Common/CKServerChangeToken.h; sourceTree = "<group>"; };
+		AB37EDB423F49E6D0000F92E /* CKShare.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKShare.mm; path = ../../Common/CKShare.mm; sourceTree = "<group>"; };
+		AB37EDB523F49E6D0000F92E /* CKRecordZoneID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKRecordZoneID.h; path = ../../Common/CKRecordZoneID.h; sourceTree = "<group>"; };
+		AB37EDB623F49E6D0000F92E /* CKReference.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKReference.mm; path = ../../Common/CKReference.mm; sourceTree = "<group>"; };
+		AB37EDB723F49E6D0000F92E /* CKShareParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKShareParticipant.h; path = ../../Common/CKShareParticipant.h; sourceTree = "<group>"; };
+		AB37EDB823F49E6D0000F92E /* CKSubscription.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKSubscription.mm; path = ../../Common/CKSubscription.mm; sourceTree = "<group>"; };
+		AB37EDB923F49E6D0000F92E /* CKShareParticipant.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKShareParticipant.mm; path = ../../Common/CKShareParticipant.mm; sourceTree = "<group>"; };
+		AB37EDBA23F49E6D0000F92E /* CKSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKSubscription.h; path = ../../Common/CKSubscription.h; sourceTree = "<group>"; };
+		AB37EDBB23F49E6D0000F92E /* CKReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKReference.h; path = ../../Common/CKReference.h; sourceTree = "<group>"; };
+		AB37EDBC23F49E6E0000F92E /* CKServerChangeToken.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKServerChangeToken.mm; path = ../../Common/CKServerChangeToken.mm; sourceTree = "<group>"; };
+		AB5583FC2405EE2F00EE0573 /* NSSortDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSSortDescriptor.h; path = ../../Common/NSSortDescriptor.h; sourceTree = "<group>"; };
+		AB5583FD2405EE2F00EE0573 /* NSSortDescriptor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSSortDescriptor.mm; path = ../../Common/NSSortDescriptor.mm; sourceTree = "<group>"; };
+		AB58890A240D42F200B10456 /* NSException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSException.mm; path = ../../Common/NSException.mm; sourceTree = "<group>"; };
+		AB58890B240D42F200B10456 /* NSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSException.h; path = ../../Common/NSException.h; sourceTree = "<group>"; };
+		AB7EFAF42412D5C400261550 /* NSUbiquitousKeyValueStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSUbiquitousKeyValueStore.mm; path = ../../Common/NSUbiquitousKeyValueStore.mm; sourceTree = "<group>"; };
+		AB7EFAF52412D5C500261550 /* NSUbiquitousKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSUbiquitousKeyValueStore.h; path = ../../Common/NSUbiquitousKeyValueStore.h; sourceTree = "<group>"; };
+		ABE0EB5C241A74B800C29997 /* NSFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManager.h; path = ../../Common/NSFileManager.h; sourceTree = "<group>"; };
+		ABE0EB5D241A74B800C29997 /* NSFileManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSFileManager.mm; path = ../../Common/NSFileManager.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB37EC4623F49B440000F92E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB37EC3F23F49B440000F92E = {
+			isa = PBXGroup;
+			children = (
+				AB37EC4A23F49B440000F92E /* HHCloudKitIOS */,
+				AB37EC4923F49B440000F92E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AB37EC4923F49B440000F92E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB37EC4823F49B440000F92E /* libHHCloudKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB37EC4A23F49B440000F92E /* HHCloudKitIOS */ = {
+			isa = PBXGroup;
+			children = (
+				AB37EDB223F49E6C0000F92E /* CKQueryCursor.h */,
+				AB37EDB023F49E6C0000F92E /* CKQueryCursor.mm */,
+				AB37ED9F23F49E670000F92E /* CKQueryNotification.h */,
+				AB37EDA923F49E6A0000F92E /* CKQueryNotification.mm */,
+				AB37EDA523F49E680000F92E /* CKQueryOperation.h */,
+				AB37EDA823F49E690000F92E /* CKQueryOperation.mm */,
+				AB37EDAA23F49E6A0000F92E /* CKQuerySubscription.h */,
+				AB37EDAC23F49E6B0000F92E /* CKQuerySubscription.mm */,
+				AB37EDA323F49E680000F92E /* CKRecord.h */,
+				AB37EDAB23F49E6A0000F92E /* CKRecord.mm */,
+				AB37EDB123F49E6C0000F92E /* CKRecordID.h */,
+				AB37EDAD23F49E6B0000F92E /* CKRecordID.mm */,
+				AB37ED9E23F49E670000F92E /* CKRecordZone.h */,
+				AB37EDA123F49E680000F92E /* CKRecordZone.mm */,
+				AB37EDB523F49E6D0000F92E /* CKRecordZoneID.h */,
+				AB37EDA223F49E680000F92E /* CKRecordZoneID.mm */,
+				AB37EDA423F49E680000F92E /* CKRecordZoneNotification.h */,
+				AB37EDAF23F49E6B0000F92E /* CKRecordZoneNotification.mm */,
+				AB37EDBB23F49E6D0000F92E /* CKReference.h */,
+				AB37EDB623F49E6D0000F92E /* CKReference.mm */,
+				AB37EDB323F49E6C0000F92E /* CKServerChangeToken.h */,
+				AB37EDBC23F49E6E0000F92E /* CKServerChangeToken.mm */,
+				AB37EDA623F49E690000F92E /* CKShare.h */,
+				AB37EDB423F49E6D0000F92E /* CKShare.mm */,
+				AB37EDA723F49E690000F92E /* CKShareMetadata.h */,
+				AB37EDA023F49E670000F92E /* CKShareMetadata.mm */,
+				AB37EDB723F49E6D0000F92E /* CKShareParticipant.h */,
+				AB37EDB923F49E6D0000F92E /* CKShareParticipant.mm */,
+				AB37EDBA23F49E6D0000F92E /* CKSubscription.h */,
+				AB37EDB823F49E6D0000F92E /* CKSubscription.mm */,
+				AB37EDAE23F49E6B0000F92E /* CKSubscriptionID.h */,
+				AB37EC5D23F49B690000F92E /* Callbacks.h */,
+				AB37EC8523F49B6D0000F92E /* CKAcceptSharesOperation.h */,
+				AB37EC8023F49B6D0000F92E /* CKAcceptSharesOperation.mm */,
+				AB37EC7123F49B6B0000F92E /* CKAsset.h */,
+				AB37EC5E23F49B690000F92E /* CKAsset.mm */,
+				AB37EC5523F49B690000F92E /* CKContainer.h */,
+				AB37EC6E23F49B6B0000F92E /* CKContainer.mm */,
+				AB37EC8723F49B6D0000F92E /* CKDatabase.h */,
+				AB37EC9023F49B6E0000F92E /* CKDatabase.mm */,
+				AB37EC8A23F49B6E0000F92E /* CKDatabaseNotification.h */,
+				AB37EC7F23F49B6D0000F92E /* CKDatabaseNotification.mm */,
+				AB37EC9323F49B6F0000F92E /* CKDatabaseOperation.h */,
+				AB37EC7723F49B6C0000F92E /* CKDatabaseOperation.mm */,
+				AB37EC6123F49B690000F92E /* CKDiscoverUserIdentitiesOperation.h */,
+				AB37EC5923F49B690000F92E /* CKDiscoverUserIdentitiesOperation.mm */,
+				AB37EC7423F49B6B0000F92E /* CKFetchDatabaseChangesOperation.h */,
+				AB37EC6623F49B6A0000F92E /* CKFetchDatabaseChangesOperation.mm */,
+				AB37EC6A23F49B6A0000F92E /* CKFetchRecordsOperation.h */,
+				AB37EC5B23F49B690000F92E /* CKFetchRecordsOperation.mm */,
+				AB37EC5623F49B690000F92E /* CKFetchRecordZoneChangesOperation.h */,
+				AB37EC6023F49B690000F92E /* CKFetchRecordZoneChangesOperation.mm */,
+				AB37EC5A23F49B690000F92E /* CKFetchRecordZonesOperation.h */,
+				AB37EC9523F49B6F0000F92E /* CKFetchRecordZonesOperation.mm */,
+				AB37EC8823F49B6E0000F92E /* CKFetchShareMetadataOperation.h */,
+				AB37EC8C23F49B6E0000F92E /* CKFetchShareMetadataOperation.mm */,
+				AB37EC8123F49B6D0000F92E /* CKFetchShareParticipantsOperation.h */,
+				AB37EC7D23F49B6C0000F92E /* CKFetchShareParticipantsOperation.mm */,
+				AB37EC8D23F49B6E0000F92E /* CKLocationSortDescriptor.h */,
+				AB37EC9623F49B6F0000F92E /* CKLocationSortDescriptor.mm */,
+				AB37EC8E23F49B6E0000F92E /* CKModifyRecordsOperation.h */,
+				AB37EC5423F49B690000F92E /* CKModifyRecordsOperation.mm */,
+				AB37EC8323F49B6D0000F92E /* CKModifyRecordZonesOperation.h */,
+				AB37EC9123F49B6E0000F92E /* CKModifyRecordZonesOperation.mm */,
+				AB37EC5723F49B690000F92E /* CKNotification.h */,
+				AB37EC9723F49B6F0000F92E /* CKNotification.mm */,
+				AB37EC5823F49B690000F92E /* CKNotificationID.h */,
+				AB37EC8F23F49B6E0000F92E /* CKNotificationID.mm */,
+				AB37EC7A23F49B6C0000F92E /* CKNotificationInfo.h */,
+				AB37EC6423F49B6A0000F92E /* CKNotificationInfo.mm */,
+				AB37EC7523F49B6C0000F92E /* CKOperation.h */,
+				AB37EC7E23F49B6D0000F92E /* CKOperation.mm */,
+				AB37EC7623F49B6C0000F92E /* CKOperationConfiguration.h */,
+				AB37EC7B23F49B6C0000F92E /* CKOperationConfiguration.mm */,
+				AB37EC8923F49B6E0000F92E /* CKOperationGroup.h */,
+				AB37EC7C23F49B6C0000F92E /* CKOperationGroup.mm */,
+				AB37EC5C23F49B690000F92E /* CKQuery.h */,
+				AB37EC6823F49B6A0000F92E /* CKQuery.mm */,
+				AB37EC6223F49B6A0000F92E /* CKSubscriptionID.mm */,
+				AB37EC7823F49B6C0000F92E /* CKUserIdentity.h */,
+				AB37EC6D23F49B6B0000F92E /* CKUserIdentity.mm */,
+				AB37EC6723F49B6A0000F92E /* CKUserIdentityLookupInfo.h */,
+				AB37EC7223F49B6B0000F92E /* CKUserIdentityLookupInfo.mm */,
+				AB37EC5F23F49B690000F92E /* Converters.h */,
+				AB37EC7323F49B6B0000F92E /* Converters.m */,
+				AB31116D24181EDF00B655DE /* ICloudNotifications.h */,
+				AB31116E24181EDF00B655DE /* ICloudNotifications.mm */,
+				AB37EC6F23F49B6B0000F92E /* NSCoder.h */,
+				AB37EC8623F49B6D0000F92E /* NSCoder.mm */,
+				AB37EC6923F49B6A0000F92E /* NSError.h */,
+				AB37EC6B23F49B6A0000F92E /* NSError.mm */,
+				AB58890B240D42F200B10456 /* NSException.h */,
+				AB58890A240D42F200B10456 /* NSException.mm */,
+				ABE0EB5C241A74B800C29997 /* NSFileManager.h */,
+				ABE0EB5D241A74B800C29997 /* NSFileManager.mm */,
+				AB3111512416E39300B655DE /* NSNotification.h */,
+				AB3111522416E39400B655DE /* NSNotification.mm */,
+				AB37EC8423F49B6D0000F92E /* NSPersonNameComponents.h */,
+				AB37EC6323F49B6A0000F92E /* NSPersonNameComponents.mm */,
+				AB37EC8223F49B6D0000F92E /* NSPredicate.h */,
+				AB37EC6523F49B6A0000F92E /* NSPredicate.mm */,
+				AB5583FC2405EE2F00EE0573 /* NSSortDescriptor.h */,
+				AB5583FD2405EE2F00EE0573 /* NSSortDescriptor.mm */,
+				AB7EFAF52412D5C500261550 /* NSUbiquitousKeyValueStore.h */,
+				AB7EFAF42412D5C400261550 /* NSUbiquitousKeyValueStore.mm */,
+				AB37EC9223F49B6F0000F92E /* NSURL.h */,
+				AB37EC9423F49B6F0000F92E /* NSURL.mm */,
+				AB31117224181EFC00B655DE /* UbiquityIdentityToken.h */,
+				AB31117124181EFC00B655DE /* UbiquityIdentityToken.mm */,
+			);
+			path = HHCloudKitIOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AB37EC4423F49B440000F92E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB37EDCD23F49E6E0000F92E /* CKSubscriptionID.h in Headers */,
+				AB37EC9E23F49B6F0000F92E /* CKFetchRecordZonesOperation.h in Headers */,
+				AB37EDC423F49E6E0000F92E /* CKQueryOperation.h in Headers */,
+				AB37EDC923F49E6E0000F92E /* CKQuerySubscription.h in Headers */,
+				AB37ECAB23F49B6F0000F92E /* CKUserIdentityLookupInfo.h in Headers */,
+				AB37ECAE23F49B6F0000F92E /* CKFetchRecordsOperation.h in Headers */,
+				AB7EFAF72412D5C500261550 /* NSUbiquitousKeyValueStore.h in Headers */,
+				AB37ECBA23F49B6F0000F92E /* CKOperationConfiguration.h in Headers */,
+				AB37EDD123F49E6E0000F92E /* CKQueryCursor.h in Headers */,
+				AB37EDC323F49E6E0000F92E /* CKRecordZoneNotification.h in Headers */,
+				AB37ECA523F49B6F0000F92E /* CKDiscoverUserIdentitiesOperation.h in Headers */,
+				AB37ECCB23F49B6F0000F92E /* CKDatabase.h in Headers */,
+				AB3111532416E39500B655DE /* NSNotification.h in Headers */,
+				AB37EDC523F49E6E0000F92E /* CKShare.h in Headers */,
+				AB37ECC723F49B6F0000F92E /* CKModifyRecordZonesOperation.h in Headers */,
+				AB31117424181EFC00B655DE /* UbiquityIdentityToken.h in Headers */,
+				AB37EC9A23F49B6F0000F92E /* CKFetchRecordZoneChangesOperation.h in Headers */,
+				AB37ECB523F49B6F0000F92E /* CKAsset.h in Headers */,
+				AB37ECD223F49B6F0000F92E /* CKModifyRecordsOperation.h in Headers */,
+				AB37ECC523F49B6F0000F92E /* CKFetchShareParticipantsOperation.h in Headers */,
+				AB37ECD123F49B6F0000F92E /* CKLocationSortDescriptor.h in Headers */,
+				AB37EC9B23F49B6F0000F92E /* CKNotification.h in Headers */,
+				AB37EDC223F49E6E0000F92E /* CKRecord.h in Headers */,
+				AB37EDC623F49E6E0000F92E /* CKShareMetadata.h in Headers */,
+				AB37EDBD23F49E6E0000F92E /* CKRecordZone.h in Headers */,
+				AB37EC9C23F49B6F0000F92E /* CKNotificationID.h in Headers */,
+				AB37EDD623F49E6E0000F92E /* CKShareParticipant.h in Headers */,
+				AB5583FE2405EE2F00EE0573 /* NSSortDescriptor.h in Headers */,
+				AB37ECA123F49B6F0000F92E /* Callbacks.h in Headers */,
+				AB37ECCE23F49B6F0000F92E /* CKDatabaseNotification.h in Headers */,
+				AB58890D240D42F300B10456 /* NSException.h in Headers */,
+				AB37ECB823F49B6F0000F92E /* CKFetchDatabaseChangesOperation.h in Headers */,
+				AB37ECA323F49B6F0000F92E /* Converters.h in Headers */,
+				AB37ECB323F49B6F0000F92E /* NSCoder.h in Headers */,
+				AB37ECBC23F49B6F0000F92E /* CKUserIdentity.h in Headers */,
+				AB37EDD223F49E6E0000F92E /* CKServerChangeToken.h in Headers */,
+				AB37EDD423F49E6E0000F92E /* CKRecordZoneID.h in Headers */,
+				ABE0EB5E241A74B900C29997 /* NSFileManager.h in Headers */,
+				AB31116F24181EDF00B655DE /* ICloudNotifications.h in Headers */,
+				AB37ECBE23F49B6F0000F92E /* CKNotificationInfo.h in Headers */,
+				AB37ECC623F49B6F0000F92E /* NSPredicate.h in Headers */,
+				AB37ECCD23F49B6F0000F92E /* CKOperationGroup.h in Headers */,
+				AB37EDD023F49E6E0000F92E /* CKRecordID.h in Headers */,
+				AB37ECAD23F49B6F0000F92E /* NSError.h in Headers */,
+				AB37ECCC23F49B6F0000F92E /* CKFetchShareMetadataOperation.h in Headers */,
+				AB37ECD623F49B6F0000F92E /* NSURL.h in Headers */,
+				AB37EC9923F49B6F0000F92E /* CKContainer.h in Headers */,
+				AB37EDD923F49E6E0000F92E /* CKSubscription.h in Headers */,
+				AB37ECC823F49B6F0000F92E /* NSPersonNameComponents.h in Headers */,
+				AB37ECC923F49B6F0000F92E /* CKAcceptSharesOperation.h in Headers */,
+				AB37EDBE23F49E6E0000F92E /* CKQueryNotification.h in Headers */,
+				AB37ECB923F49B6F0000F92E /* CKOperation.h in Headers */,
+				AB37ECA023F49B6F0000F92E /* CKQuery.h in Headers */,
+				AB37ECD723F49B6F0000F92E /* CKDatabaseOperation.h in Headers */,
+				AB37EDDA23F49E6E0000F92E /* CKReference.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AB37EC4723F49B440000F92E /* HHCloudKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB37EC5123F49B440000F92E /* Build configuration list for PBXNativeTarget "HHCloudKit" */;
+			buildPhases = (
+				AB37EC4423F49B440000F92E /* Headers */,
+				AB37EC4523F49B440000F92E /* Sources */,
+				AB37EC4623F49B440000F92E /* Frameworks */,
+				AB37EDDF23F4A8950000F92E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHCloudKit;
+			productName = HHCloudKitIOS;
+			productReference = AB37EC4823F49B440000F92E /* libHHCloudKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB37EC4023F49B440000F92E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = HovelHouseApps;
+				TargetAttributes = {
+					AB37EC4723F49B440000F92E = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = AB37EC4323F49B440000F92E /* Build configuration list for PBXProject "HHCloudKitIOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AB37EC3F23F49B440000F92E;
+			productRefGroup = AB37EC4923F49B440000F92E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AB37EC4723F49B440000F92E /* HHCloudKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB37EC4523F49B440000F92E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB37ECDA23F49B6F0000F92E /* CKLocationSortDescriptor.mm in Sources */,
+				AB37ECCA23F49B6F0000F92E /* NSCoder.mm in Sources */,
+				AB37ECB623F49B6F0000F92E /* CKUserIdentityLookupInfo.mm in Sources */,
+				AB37EDC823F49E6E0000F92E /* CKQueryNotification.mm in Sources */,
+				AB37ECD423F49B6F0000F92E /* CKDatabase.mm in Sources */,
+				AB37EDCE23F49E6E0000F92E /* CKRecordZoneNotification.mm in Sources */,
+				ABE0EB5F241A74B900C29997 /* NSFileManager.mm in Sources */,
+				AB37ECB123F49B6F0000F92E /* CKUserIdentity.mm in Sources */,
+				AB37EDCA23F49E6E0000F92E /* CKRecord.mm in Sources */,
+				AB58890C240D42F300B10456 /* NSException.mm in Sources */,
+				AB37EDD723F49E6E0000F92E /* CKSubscription.mm in Sources */,
+				AB37ECBB23F49B6F0000F92E /* CKDatabaseOperation.mm in Sources */,
+				AB37EDD523F49E6E0000F92E /* CKReference.mm in Sources */,
+				AB37EDD823F49E6E0000F92E /* CKShareParticipant.mm in Sources */,
+				AB37ECC323F49B6F0000F92E /* CKDatabaseNotification.mm in Sources */,
+				AB37EDCC23F49E6E0000F92E /* CKRecordID.mm in Sources */,
+				AB37EDD323F49E6E0000F92E /* CKShare.mm in Sources */,
+				AB37ECA223F49B6F0000F92E /* CKAsset.mm in Sources */,
+				AB37ECC123F49B6F0000F92E /* CKFetchShareParticipantsOperation.mm in Sources */,
+				AB37EC9823F49B6F0000F92E /* CKModifyRecordsOperation.mm in Sources */,
+				AB37EC9D23F49B6F0000F92E /* CKDiscoverUserIdentitiesOperation.mm in Sources */,
+				AB37ECD823F49B6F0000F92E /* NSURL.mm in Sources */,
+				AB37ECD323F49B6F0000F92E /* CKNotificationID.mm in Sources */,
+				AB31117024181EDF00B655DE /* ICloudNotifications.mm in Sources */,
+				AB37EDCB23F49E6E0000F92E /* CKQuerySubscription.mm in Sources */,
+				AB37EC9F23F49B6F0000F92E /* CKFetchRecordsOperation.mm in Sources */,
+				AB37ECB723F49B6F0000F92E /* Converters.m in Sources */,
+				AB37ECA723F49B6F0000F92E /* NSPersonNameComponents.mm in Sources */,
+				AB7EFAF62412D5C500261550 /* NSUbiquitousKeyValueStore.mm in Sources */,
+				AB37EDDB23F49E6E0000F92E /* CKServerChangeToken.mm in Sources */,
+				AB37ECC023F49B6F0000F92E /* CKOperationGroup.mm in Sources */,
+				AB37ECDB23F49B6F0000F92E /* CKNotification.mm in Sources */,
+				AB37ECA423F49B6F0000F92E /* CKFetchRecordZoneChangesOperation.mm in Sources */,
+				AB37ECA923F49B6F0000F92E /* NSPredicate.mm in Sources */,
+				AB37ECD523F49B6F0000F92E /* CKModifyRecordZonesOperation.mm in Sources */,
+				AB37ECC223F49B6F0000F92E /* CKOperation.mm in Sources */,
+				AB37ECA823F49B6F0000F92E /* CKNotificationInfo.mm in Sources */,
+				AB37EDBF23F49E6E0000F92E /* CKShareMetadata.mm in Sources */,
+				AB37ECA623F49B6F0000F92E /* CKSubscriptionID.mm in Sources */,
+				AB37ECC423F49B6F0000F92E /* CKAcceptSharesOperation.mm in Sources */,
+				AB37ECBF23F49B6F0000F92E /* CKOperationConfiguration.mm in Sources */,
+				AB5583FF2405EE2F00EE0573 /* NSSortDescriptor.mm in Sources */,
+				AB37EDC723F49E6E0000F92E /* CKQueryOperation.mm in Sources */,
+				AB31117324181EFC00B655DE /* UbiquityIdentityToken.mm in Sources */,
+				AB37EDC023F49E6E0000F92E /* CKRecordZone.mm in Sources */,
+				AB37ECAF23F49B6F0000F92E /* NSError.mm in Sources */,
+				AB37ECD023F49B6F0000F92E /* CKFetchShareMetadataOperation.mm in Sources */,
+				AB3111542416E39500B655DE /* NSNotification.mm in Sources */,
+				AB37EDC123F49E6E0000F92E /* CKRecordZoneID.mm in Sources */,
+				AB37ECB223F49B6F0000F92E /* CKContainer.mm in Sources */,
+				AB37ECD923F49B6F0000F92E /* CKFetchRecordZonesOperation.mm in Sources */,
+				AB37EDCF23F49E6E0000F92E /* CKQueryCursor.mm in Sources */,
+				AB37ECAA23F49B6F0000F92E /* CKFetchDatabaseChangesOperation.mm in Sources */,
+				AB37ECAC23F49B6F0000F92E /* CKQuery.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB37EC4F23F49B440000F92E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AB37EC5023F49B440000F92E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AB37EC5223F49B440000F92E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DCQFJ2K8S3;
+				EXECUTABLE_PREFIX = lib;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		AB37EC5323F49B440000F92E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DCQFJ2K8S3;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB37EC4323F49B440000F92E /* Build configuration list for PBXProject "HHCloudKitIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB37EC4F23F49B440000F92E /* Debug */,
+				AB37EC5023F49B440000F92E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB37EC5123F49B440000F92E /* Build configuration list for PBXNativeTarget "HHCloudKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB37EC5223F49B440000F92E /* Debug */,
+				AB37EC5323F49B440000F92E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB37EC4023F49B440000F92E /* Project object */;
+}

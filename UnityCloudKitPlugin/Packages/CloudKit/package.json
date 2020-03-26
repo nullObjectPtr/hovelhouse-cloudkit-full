@@ -1,0 +1,34 @@
+{
+	"name":"com.hovelhouse.cloudkit",
+	"version":"0.2.0",
+	"displayName":"Cloud Kit Plugin",
+	"description":"An Apple Arcade ready CloudKit plugin for iOS, macOS and TVOS",
+	"unity":"2018.4",
+	"unityRelease":"7f1",
+	"dependencies":{},
+	"keywords":
+	[
+		"CloudKit",
+		"Apple",
+		"Arcade",
+		"Apple Arcade",
+		"Native",
+		"iOS",
+		"TVOS",
+		"macOS"
+	],
+	"author":
+	{
+		"name":"Jonathan Culp",
+		"email":"jonathanculp@gmail.com",
+		"url":"http://www.hovelhouse.com/"
+	},
+    "samples":
+    [
+        {
+            "displayName": "Samples",
+            "description": "Eight sample scenes that demonstrate common usages of CloudKit",
+            "path":"Samples/ExampleHub"
+        }
+    ]
+}

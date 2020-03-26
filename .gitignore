@@ -1,0 +1,5 @@
+#ignore the build folder
+
+[Bb]uild/
+[Bb]uilds/
+**/xcuserdata

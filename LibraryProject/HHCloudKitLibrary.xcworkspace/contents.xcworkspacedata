@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:HHCloudKitTVOS/HHCloudKitTVOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HHCloudKitIOS/HHCloudKitIOS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HHCloudKitMacOS/HHCloudKitMacOS.xcodeproj">
+   </FileRef>
+</Workspace>

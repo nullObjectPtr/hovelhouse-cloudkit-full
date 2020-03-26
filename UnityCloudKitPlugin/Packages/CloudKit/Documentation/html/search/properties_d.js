@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['parent_436',['Parent',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#aa86005e646a29fffb3bfd54991c494d5',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['participantpermission_437',['ParticipantPermission',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_share_metadata.html#ab0f99515416430440489605a301f7a6e',1,'HovelHouse::CloudKit::CKShareMetadata']]],
+  ['participantrole_438',['ParticipantRole',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_share_metadata.html#a9a584f350d7e1608bc36116aa2907267',1,'HovelHouse::CloudKit::CKShareMetadata']]],
+  ['participantstatus_439',['ParticipantStatus',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_share_metadata.html#a948455031c31d4c42989f42d94ed7c23',1,'HovelHouse::CloudKit::CKShareMetadata']]],
+  ['permission_440',['Permission',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_share_participant.html#a5996567d9317fcec216dd4d635ab642f',1,'HovelHouse::CloudKit::CKShareParticipant']]],
+  ['perrecordcompletionblock_441',['PerRecordCompletionBlock',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_modify_records_operation.html#a416b08a93e2d9d23598665edd486e448',1,'HovelHouse::CloudKit::CKModifyRecordsOperation']]],
+  ['perrecordcompletionhandler_442',['PerRecordCompletionHandler',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_fetch_records_operation.html#a95b35a72b99417561ccb27699a26a818',1,'HovelHouse::CloudKit::CKFetchRecordsOperation']]],
+  ['perrecordprogressblock_443',['PerRecordProgressBlock',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_modify_records_operation.html#a8551f3a672e8af5648c0e771ce6fc5f8',1,'HovelHouse::CloudKit::CKModifyRecordsOperation']]],
+  ['persharecompletionhandler_444',['PerShareCompletionHandler',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_accept_shares_operation.html#ad7c87ff140d2eebc2f265e0cc449510a',1,'HovelHouse::CloudKit::CKAcceptSharesOperation']]],
+  ['persharemetadatahandler_445',['PerShareMetadataHandler',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_fetch_share_metadata_operation.html#a3c56e0840adf292c2995bd88c598e730',1,'HovelHouse::CloudKit::CKFetchShareMetadataOperation']]],
+  ['phonenumber_446',['PhoneNumber',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_user_identity_lookup_info.html#a2aa5a602b38e253b0b3e21ffeb9db314',1,'HovelHouse::CloudKit::CKUserIdentityLookupInfo']]],
+  ['phoneticrepresentation_447',['PhoneticRepresentation',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_person_name_components.html#a148861e84cb5e9009275c460e65e4b90',1,'HovelHouse::CloudKit::NSPersonNameComponents']]],
+  ['predicate_448',['Predicate',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_query.html#aefb347f62f067c3a76f4b43857a05798',1,'HovelHouse.CloudKit.CKQuery.Predicate()'],['../class_hovel_house_1_1_cloud_kit_1_1_c_k_query_subscription.html#a944aa4a811223eb32e4159b8fe407c1d',1,'HovelHouse.CloudKit.CKQuerySubscription.Predicate()']]],
+  ['predicateformat_449',['PredicateFormat',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_predicate.html#a8fa9d28ef36c23053bbfbdb52e29d7ee',1,'HovelHouse::CloudKit::NSPredicate']]],
+  ['previousserverchangetoken_450',['PreviousServerChangeToken',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_fetch_database_changes_operation.html#a38a3a2af2fa80201a1586b2097adfab9',1,'HovelHouse::CloudKit::CKFetchDatabaseChangesOperation']]],
+  ['privateclouddatabase_451',['PrivateCloudDatabase',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_container.html#ae1048ffc92580ea212d22452d3242c8e',1,'HovelHouse::CloudKit::CKContainer']]],
+  ['progresshandler_452',['ProgressHandler',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_fetch_records_operation.html#a3e4285d4a91c55c6fd2a60a64025344a',1,'HovelHouse::CloudKit::CKFetchRecordsOperation']]],
+  ['publicclouddatabase_453',['PublicCloudDatabase',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_container.html#ae1c37172dd6e23f5e9a6153feb51e6d1',1,'HovelHouse::CloudKit::CKContainer']]]
+];

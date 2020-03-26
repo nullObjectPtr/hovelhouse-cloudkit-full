@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['saverecord_356',['SaveRecord',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#ae0dde250b31ebc3dec78f9d8e1b999be',1,'HovelHouse::CloudKit::CKDatabase']]],
+  ['saverecordzone_357',['SaveRecordZone',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#aabd3ae51bfe99a6cfc7f8180abca93ee',1,'HovelHouse::CloudKit::CKDatabase']]],
+  ['savesubscription_358',['SaveSubscription',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#a85e7bc79fcc3e2df646fcaa56b067b19',1,'HovelHouse::CloudKit::CKDatabase']]],
+  ['setasset_359',['SetAsset',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a448a6acb396caf2be2ec5fe253839a40',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['setbool_360',['SetBool',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a9fc4cc283541e4ab86049aaf6fb84e9f',1,'HovelHouse::CloudKit::NSUbiquitousKeyValueStore']]],
+  ['setbuffer_361',['SetBuffer',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a37a1c81a572201ac23173a69099621ba',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['setdouble_362',['SetDouble',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a17d22517caa3d4cf3f96f1193dfe2f44',1,'HovelHouse.CloudKit.CKRecord.SetDouble()'],['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a2994a8d93eccb91bf2db36d8aae3f22e',1,'HovelHouse.CloudKit.NSUbiquitousKeyValueStore.SetDouble()']]],
+  ['setint_363',['SetInt',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#aec375ffcf27a665b34355bcdf1b1b7d6',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['setlonglong_364',['SetLongLong',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#ace0d932540c3d89913a30cf55feb5382',1,'HovelHouse::CloudKit::NSUbiquitousKeyValueStore']]],
+  ['setparentreferencefromrecord_365',['SetParentReferenceFromRecord',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#aa6ed34ac6d4d374711117c51ccd1919b',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['setparentreferencefromrecordid_366',['SetParentReferenceFromRecordID',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a257082fa1bdab5110cb2c55b9cd0dab3',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['setreference_367',['SetReference',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a037ca9db6f539aab932c050666197004',1,'HovelHouse::CloudKit::CKRecord']]],
+  ['setstring_368',['SetString',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#ace1103dccd7dd6b7718b16d9c310aacc',1,'HovelHouse.CloudKit.CKRecord.SetString()'],['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a8233ac2e6fa558728cd5af9546ebcf5b',1,'HovelHouse.CloudKit.NSUbiquitousKeyValueStore.SetString()']]],
+  ['setubiquitousitematurl_369',['SetUbiquitousItemAtURL',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_file_manager.html#a5ba80518b0c5c7417ba054482777f11e',1,'HovelHouse::CloudKit::NSFileManager']]],
+  ['startdownloadingubiquitousitematurl_370',['StartDownloadingUbiquitousItemAtURL',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_file_manager.html#afdd492be936a53481f7cb8d1d7590096',1,'HovelHouse::CloudKit::NSFileManager']]],
+  ['statusforapplicationpermission_371',['StatusForApplicationPermission',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_container.html#a983528629c584f2e02a752cfe801e6fb',1,'HovelHouse::CloudKit::CKContainer']]],
+  ['stringforkey_372',['StringForKey',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a7fff1686e38320e242d33f19baa7992c',1,'HovelHouse.CloudKit.CKRecord.StringForKey()'],['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a50d1e020ebb689ee04479089a758844f',1,'HovelHouse.CloudKit.NSUbiquitousKeyValueStore.StringForKey()']]],
+  ['synchronize_373',['Synchronize',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a679900612b6f86ae0d5783634a87efd5',1,'HovelHouse::CloudKit::NSUbiquitousKeyValueStore']]]
+];

@@ -1,0 +1,18 @@
+var searchData=
+[
+  ['database_69',['Database',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database_operation.html#ac3b5db13c0671d51983617d3fd7f70fd',1,'HovelHouse::CloudKit::CKDatabaseOperation']]],
+  ['databasescope_70',['DatabaseScope',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#a531de7f14184bc5bf4679cb1fafa6207',1,'HovelHouse.CloudKit.CKDatabase.DatabaseScope()'],['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database_notification.html#a4b0094d5a1cb8b5ac6fc79d63255059c',1,'HovelHouse.CloudKit.CKDatabaseNotification.DatabaseScope()'],['../class_hovel_house_1_1_cloud_kit_1_1_c_k_query_notification.html#aa0d8ced09aa71135cbed8a205627b4a5',1,'HovelHouse.CloudKit.CKQueryNotification.DatabaseScope()'],['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record_zone_notification.html#a5ac192a08a45fb004b42dc1980a58e42',1,'HovelHouse.CloudKit.CKRecordZoneNotification.DatabaseScope()']]],
+  ['databasewithdatabasescope_71',['DatabaseWithDatabaseScope',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_container.html#aa25e75de6bd7b0c3a3d6f2b5122dc53f',1,'HovelHouse::CloudKit::CKContainer']]],
+  ['defaultconfiguration_72',['DefaultConfiguration',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_operation_group.html#a9e44c51bd3d99f8c75c2e9231d74412a',1,'HovelHouse::CloudKit::CKOperationGroup']]],
+  ['defaultcontainer_73',['DefaultContainer',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_container.html#ad761a9edbba4d1cae106236398d7fcdb',1,'HovelHouse::CloudKit::CKContainer']]],
+  ['defaultmanager_74',['DefaultManager',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_file_manager.html#a5b5ffdc2a82bad95e924e8d14260f1d4',1,'HovelHouse::CloudKit::NSFileManager']]],
+  ['defaultrecordzone_75',['DefaultRecordZone',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record_zone.html#aa5e0c1442cc8f6e907942f8dcad3edca',1,'HovelHouse::CloudKit::CKRecordZone']]],
+  ['defaultstore_76',['DefaultStore',['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a9a42dab9ab53144d245e20d32ccfbd42',1,'HovelHouse::CloudKit::NSUbiquitousKeyValueStore']]],
+  ['deleterecordwithid_77',['DeleteRecordWithID',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#a00c7a9abfefcfe21293b3fb10989f011',1,'HovelHouse::CloudKit::CKDatabase']]],
+  ['deleterecordzonewithid_78',['DeleteRecordZoneWithID',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#aa54182368a0bdb3fa6b4f112d5e6904c',1,'HovelHouse::CloudKit::CKDatabase']]],
+  ['deletesubscriptionwithid_79',['DeleteSubscriptionWithID',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_database.html#a947ec0a148ab567417c4d4ffe80889d8',1,'HovelHouse::CloudKit::CKDatabase']]],
+  ['discoveruseridentitiescompletionhandler_80',['DiscoverUserIdentitiesCompletionHandler',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_discover_user_identities_operation.html#ac9c168e7ef1f78c2fd36cc228595ccdb',1,'HovelHouse::CloudKit::CKDiscoverUserIdentitiesOperation']]],
+  ['discoveruseridentitywithemailaddress_81',['DiscoverUserIdentityWithEmailAddress',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_container.html#ac71b9248cc83001197321982cf47f0f7',1,'HovelHouse::CloudKit::CKContainer']]],
+  ['dispatcher_82',['Dispatcher',['../class_hovel_house_1_1_cloud_kit_1_1_dispatcher.html',1,'HovelHouse::CloudKit']]],
+  ['doubleforkey_83',['DoubleForKey',['../class_hovel_house_1_1_cloud_kit_1_1_c_k_record.html#a5597067d0a08f52b88e74a990ed7eb9e',1,'HovelHouse.CloudKit.CKRecord.DoubleForKey()'],['../class_hovel_house_1_1_cloud_kit_1_1_n_s_ubiquitous_key_value_store.html#a77509acae06f8ba99226c9bd3936b974',1,'HovelHouse.CloudKit.NSUbiquitousKeyValueStore.DoubleForKey()']]]
+];
