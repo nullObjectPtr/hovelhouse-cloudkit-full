@@ -1,18 +1,41 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace HovelHouse.CloudKit
 {
+    [Serializable]
+    [Flags]
+    public enum BackgroundModes
+    {
+        None = 0x0,
+        AudioAirplayPiP = 0x1,
+        LocationUpdates = 0x2,
+        VoiceOverIP = 0x4,
+        NewsstandDownloads = 0x8,
+        ExternalAccessoryCommunication = 0x10,
+        UsesBluetoothLEAccessory = 0x20,
+        ActsAsABluetoothLEAccessory = 0x40,
+        BackgroundFetch = 0x80,
+        RemoteNotifications = 0x100
+    }
+
+    public enum APSEnvironment
+    {
+        Development,
+        Production
+    }
+
     public class BuildSettings : ScriptableObject
     {
         [Header("Entitlements")]
         public bool EnableCloudKit = true;
-        public bool EnableKeyVaueStorage = true;
+        public bool EnableKeyVaueStorage;
         public bool EnableDocumentStorage;
         public bool AddDefaultContainers = true;
         public string[] CustomContainers;
 
         [Header("iOS and tvOS Build Settings")]
-        public bool EnablePostProcessIOSandTVOS = true;
+        public bool EnablePostProcessXCodeProject = true;
 
         [Header("MacOS Build Settings")]
         public bool EnablePostProcessMacOS = true;
@@ -37,5 +60,14 @@ namespace HovelHouse.CloudKit
         [Tooltip("Your custom entitlements file")]
         [FilePath("entitlements")]
         public string EntitlementsPath;
+
+        [Tooltip("If enabled, adds the BackgroundData capability to the XCode project. The RemoteNotifications background mode is required for CloudKit Subscriptions to work")]
+        public bool EnableCloudKitNotifications = true;
+
+        [Tooltip("The Apple Push Notification (APS) environment. This setting only effects MacOS.")]
+        public APSEnvironment apsEnvironment;
+
+        [Tooltip("If you use subscriptions - remote notifications must be enabled")]
+        public BackgroundModes BackgroundModes = BackgroundModes.RemoteNotifications;
     }
 }

@@ -2,7 +2,48 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-- Unit tests
+
+## [1.1.0] - 2020-06-11
+### Changed
+- CloudKit notifications working for all platforms now
+- Swizzled app delegate methods will call the original method if present now
+- Build process adds the APS entitlement if cloudkit notifications are enabled
+
+## [1.0.1] - 2020-06-04
+### Changed
+- Callbacks are now invoked on the calling methods syncronization context instead of the unity game thread. This makes callbacks usable in a wider variety of contexts, such as a separate worker thread. Potentially a breaking change for anyone who had coded around this limitation. Most users should be fine.
+### Added
+- Added support for CloudKit notifications. Added missing API classes and methods: CKDatabaseSubscription, CKFetchSubscriptionsOperation, CKModifySubscriptionsOperation, and CKRecordZoneSubscription.
+- Added an example script that demo's how to use subscriptions
+### Removed
+- Removed the link to the git url from the setup instructions. The repository will become private once the plugin goes live on the asset store. 
+
+## [1.0.0] - 2020-05-02
+### Changed
+- this version is exactly the same as version 0.3.1 - it was submitted to the asset store for consideration as a paid plugin and the version number was bumped to 1.0.0 to take it out of "preview" status in the package manager
+
+## [0.3.1] - 2020-04-22
+### Changed
+- fixed bug where the signing script could not be located if the plugin was not imported as an embedded package
+- fixed a bug in the signing script that did not handle paths with spaces
+- fixed a bug with the MacOS build process where the creation of the entitlements file would fail if no partial entitlements file was specified in the build settings (you can now build a MacOS project without needing to specify a partial entitlements file)
+- MacOS standalone project now automatically adds the (required) ApplicationIdentifier entitlement
+- KVS disabled by default in build settings due to an issue with UnityCloudBuild
+
+## [0.3.0] - 2020-04-17
+### Added
+- Added integration test stubs (and a few) integration tests. You can run them by adding the entry "testables":["com.hovelhouse.cloudkit"] to the manifest.json file in the packages directory
+
+### Changed
+- Overrode equality for CKObject so that managed objects are considered equal when they point to the same underlying unmanaged pointer (breaking change)
+- Added missing methods to CKShare
+- Adjusted post process build step for MacOS target, so that it does not run the signing script when the "Create XCode Project" option is checked in build settings
+- Renamed MacOS bundle to HHCloudKitMacOS to match the other libraries better
+
+## [0.2.3] - 2020-04-09
+### Added
+- Added methods for the class CKShare
+- Stubs for Integration Tests
 
 ## [0.2.2] - 2020-04-04
 ### Added

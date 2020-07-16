@@ -1,7 +1,7 @@
 //
 //  CKModifyRecordsOperation.cs
 //
-//  Created by Jonathan Culp <jonathanculp@gmail.com> on 03/26/2020
+//  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
 //  Copyright © 2020 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
@@ -34,7 +34,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKModifyRecordsOperation_init(
             out IntPtr exceptionPtr
@@ -43,7 +43,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKModifyRecordsOperation_initWithRecordsToSave_recordIDsToDelete(
             [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.SysInt, SizeParamIndex = 2)]
@@ -65,78 +65,85 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_GetPropRecordsToSave(HandleRef ptr, ref IntPtr buffer, ref long count);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropRecordsToSave(HandleRef ptr, IntPtr[] recordsToSave,
 			int recordsToSaveCount, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_GetPropRecordIDsToDelete(HandleRef ptr, ref IntPtr buffer, ref long count);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropRecordIDsToDelete(HandleRef ptr, IntPtr[] recordIDsToDelete,
 			int recordIDsToDeleteCount, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern CKRecordSavePolicy CKModifyRecordsOperation_GetPropSavePolicy(HandleRef ptr);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropSavePolicy(HandleRef ptr, long savePolicy, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern bool CKModifyRecordsOperation_GetPropAtomic(HandleRef ptr);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropAtomic(HandleRef ptr, bool atomic, out IntPtr exceptionPtr);
+
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropModifyRecordsCompletionBlock(HandleRef ptr, ModifyRecordsCompletionDelegate modifyRecordsCompletionBlock, out IntPtr exceptionPtr);
+
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropPerRecordCompletionBlock(HandleRef ptr, PerRecordCompletionDelegate perRecordCompletionBlock, out IntPtr exceptionPtr);
+
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_SetPropPerRecordProgressBlock(HandleRef ptr, PerRecordProgressDelegate perRecordProgressBlock, out IntPtr exceptionPtr);
+
         
 
         #endregion
@@ -298,9 +305,10 @@ namespace HovelHouse.CloudKit
         {
             get 
             {
-                Action<CKRecord[],CKRecordID[],NSError> value;
-                ModifyRecordsCompletionBlockCallbacks.TryGetValue(HandleRef.ToIntPtr(Handle), out value);
-                return value;
+                ModifyRecordsCompletionBlockCallbacks.TryGetValue(
+                    HandleRef.ToIntPtr(Handle), 
+                    out ExecutionContext<CKRecord[],CKRecordID[],NSError> value);
+                return value.Callback;
             }    
             set 
             {
@@ -311,7 +319,7 @@ namespace HovelHouse.CloudKit
                 }
                 else
                 {
-                    ModifyRecordsCompletionBlockCallbacks[myPtr] = value;
+                    ModifyRecordsCompletionBlockCallbacks[myPtr] = new ExecutionContext<CKRecord[],CKRecordID[],NSError>(value);
                 }
                 CKModifyRecordsOperation_SetPropModifyRecordsCompletionBlock(Handle, ModifyRecordsCompletionBlockCallback, out IntPtr exceptionPtr);
 
@@ -323,20 +331,19 @@ namespace HovelHouse.CloudKit
             }
         }
 
-        private static readonly Dictionary<IntPtr,Action<CKRecord[],CKRecordID[],NSError>> ModifyRecordsCompletionBlockCallbacks = new Dictionary<IntPtr,Action<CKRecord[],CKRecordID[],NSError>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<CKRecord[],CKRecordID[],NSError>> ModifyRecordsCompletionBlockCallbacks = new Dictionary<IntPtr,ExecutionContext<CKRecord[],CKRecordID[],NSError>>();
 
         [MonoPInvokeCallback(typeof(ModifyRecordsCompletionDelegate))]
         private static void ModifyRecordsCompletionBlockCallback(IntPtr thisPtr, IntPtr[] _savedRecords,
 		long _savedRecordsCount, IntPtr[] _deletedRecordIDs,
 		long _deletedRecordIDsCount, IntPtr _operationError)
         {
-            if(ModifyRecordsCompletionBlockCallbacks.TryGetValue(thisPtr, out Action<CKRecord[],CKRecordID[],NSError> callback))
+            if(ModifyRecordsCompletionBlockCallbacks.TryGetValue(thisPtr, out ExecutionContext<CKRecord[],CKRecordID[],NSError> callback))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => 
-                    callback(
+                callback.Invoke(
                         _savedRecords == null ? null : _savedRecords.Select(x => new CKRecord(x)).ToArray(),
                         _deletedRecordIDs == null ? null : _deletedRecordIDs.Select(x => new CKRecordID(x)).ToArray(),
-                        _operationError == IntPtr.Zero ? null : new NSError(_operationError)));
+                        _operationError == IntPtr.Zero ? null : new NSError(_operationError));
             }
         }
 
@@ -346,9 +353,10 @@ namespace HovelHouse.CloudKit
         {
             get 
             {
-                Action<CKRecord,NSError> value;
-                PerRecordCompletionBlockCallbacks.TryGetValue(HandleRef.ToIntPtr(Handle), out value);
-                return value;
+                PerRecordCompletionBlockCallbacks.TryGetValue(
+                    HandleRef.ToIntPtr(Handle), 
+                    out ExecutionContext<CKRecord,NSError> value);
+                return value.Callback;
             }    
             set 
             {
@@ -359,7 +367,7 @@ namespace HovelHouse.CloudKit
                 }
                 else
                 {
-                    PerRecordCompletionBlockCallbacks[myPtr] = value;
+                    PerRecordCompletionBlockCallbacks[myPtr] = new ExecutionContext<CKRecord,NSError>(value);
                 }
                 CKModifyRecordsOperation_SetPropPerRecordCompletionBlock(Handle, PerRecordCompletionBlockCallback, out IntPtr exceptionPtr);
 
@@ -371,17 +379,16 @@ namespace HovelHouse.CloudKit
             }
         }
 
-        private static readonly Dictionary<IntPtr,Action<CKRecord,NSError>> PerRecordCompletionBlockCallbacks = new Dictionary<IntPtr,Action<CKRecord,NSError>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<CKRecord,NSError>> PerRecordCompletionBlockCallbacks = new Dictionary<IntPtr,ExecutionContext<CKRecord,NSError>>();
 
         [MonoPInvokeCallback(typeof(PerRecordCompletionDelegate))]
         private static void PerRecordCompletionBlockCallback(IntPtr thisPtr, IntPtr _record, IntPtr _error)
         {
-            if(PerRecordCompletionBlockCallbacks.TryGetValue(thisPtr, out Action<CKRecord,NSError> callback))
+            if(PerRecordCompletionBlockCallbacks.TryGetValue(thisPtr, out ExecutionContext<CKRecord,NSError> callback))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => 
-                    callback(
+                callback.Invoke(
                         _record == IntPtr.Zero ? null : new CKRecord(_record),
-                        _error == IntPtr.Zero ? null : new NSError(_error)));
+                        _error == IntPtr.Zero ? null : new NSError(_error));
             }
         }
 
@@ -391,9 +398,10 @@ namespace HovelHouse.CloudKit
         {
             get 
             {
-                Action<CKRecord,double> value;
-                PerRecordProgressBlockCallbacks.TryGetValue(HandleRef.ToIntPtr(Handle), out value);
-                return value;
+                PerRecordProgressBlockCallbacks.TryGetValue(
+                    HandleRef.ToIntPtr(Handle), 
+                    out ExecutionContext<CKRecord,double> value);
+                return value.Callback;
             }    
             set 
             {
@@ -404,7 +412,7 @@ namespace HovelHouse.CloudKit
                 }
                 else
                 {
-                    PerRecordProgressBlockCallbacks[myPtr] = value;
+                    PerRecordProgressBlockCallbacks[myPtr] = new ExecutionContext<CKRecord,double>(value);
                 }
                 CKModifyRecordsOperation_SetPropPerRecordProgressBlock(Handle, PerRecordProgressBlockCallback, out IntPtr exceptionPtr);
 
@@ -416,17 +424,16 @@ namespace HovelHouse.CloudKit
             }
         }
 
-        private static readonly Dictionary<IntPtr,Action<CKRecord,double>> PerRecordProgressBlockCallbacks = new Dictionary<IntPtr,Action<CKRecord,double>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<CKRecord,double>> PerRecordProgressBlockCallbacks = new Dictionary<IntPtr,ExecutionContext<CKRecord,double>>();
 
         [MonoPInvokeCallback(typeof(PerRecordProgressDelegate))]
         private static void PerRecordProgressBlockCallback(IntPtr thisPtr, IntPtr _record, double _progress)
         {
-            if(PerRecordProgressBlockCallbacks.TryGetValue(thisPtr, out Action<CKRecord,double> callback))
+            if(PerRecordProgressBlockCallbacks.TryGetValue(thisPtr, out ExecutionContext<CKRecord,double> callback))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => 
-                    callback(
+                callback.Invoke(
                         _record == IntPtr.Zero ? null : new CKRecord(_record),
-                        _progress));
+                        _progress);
             }
         }
 
@@ -439,7 +446,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordsOperation_Dispose(HandleRef handle);
             

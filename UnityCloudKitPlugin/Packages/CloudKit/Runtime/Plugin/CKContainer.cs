@@ -1,7 +1,7 @@
 //
 //  CKContainer.cs
 //
-//  Created by Jonathan Culp <jonathanculp@gmail.com> on 03/26/2020
+//  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
 //  Copyright © 2020 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
@@ -32,19 +32,21 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_defaultContainer(
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_containerWithIdentifier(
             string containerIdentifier,
             out IntPtr exceptionPtr);
+
         
 
         
@@ -53,153 +55,167 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_databaseWithDatabaseScope(
             HandleRef ptr, 
             long databaseScope,
             out IntPtr exceptionPtr);
+
         
 
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchAllLongLivedOperationIDsWithCompletionHandler(
             HandleRef ptr, 
             ulong invocationId, CKLongLivedOperationIdsDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchUserRecordIDWithCompletionHandler(
             HandleRef ptr, 
             ulong invocationId, CKRecordIDDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_discoverUserIdentityWithEmailAddress_completionHandler(
             HandleRef ptr, 
             string email,
             ulong invocationId, UserIdentityDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchShareParticipantWithEmailAddress_completionHandler(
             HandleRef ptr, 
             string emailAddress,
             ulong invocationId, CKShareParticipantDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchShareParticipantWithPhoneNumber_completionHandler(
             HandleRef ptr, 
             string phoneNumber,
             ulong invocationId, CKShareParticipantDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchShareParticipantWithUserRecordID_completionHandler(
             HandleRef ptr, 
             IntPtr userRecordID,
             ulong invocationId, CKShareParticipantDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchLongLivedOperationWithID_completionHandler(
             HandleRef ptr, 
             string operationID,
             ulong invocationId, CKLongLivedOperationDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_acceptShareMetadata_completionHandler(
             HandleRef ptr, 
             IntPtr metadata,
             ulong invocationId, CKShareDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_requestApplicationPermission_completionHandler(
             HandleRef ptr, 
             long applicationPermission,
             ulong invocationId, CKApplicationPermissionsDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_accountStatusWithCompletionHandler(
             HandleRef ptr, 
             ulong invocationId, CKAccountStatusDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_statusForApplicationPermission_completionHandler(
             HandleRef ptr, 
             long applicationPermission,
             ulong invocationId, CKApplicationPermissionsDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_addOperation(
             HandleRef ptr, 
             IntPtr operation,
             out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_fetchShareMetadataWithURL_completionHandler(
             HandleRef ptr, 
             IntPtr url,
             ulong invocationId, CKShareMetadataDelegate completionHandler,
             out IntPtr exceptionPtr);
+
         
 
         // Properties
@@ -207,43 +223,47 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_GetPropPrivateCloudDatabase(HandleRef ptr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_GetPropPublicCloudDatabase(HandleRef ptr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_GetPropSharedCloudDatabase(HandleRef ptr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKContainer_GetPropContainerIdentifier(HandleRef ptr);
+
         
 
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr AddCKAccountChangedNotificationObserver(NotificationDelegate handler, ref IntPtr exceptionPtr);
 
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void RemoveCKAccountChangedNotificationObserver(HandleRef observerHandle, ref IntPtr exceptionPtr);
         
@@ -336,7 +356,7 @@ namespace HovelHouse.CloudKit
         { 
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks[completionHandlerCall] = completionHandler;
+            FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks[completionHandlerCall] = new ExecutionContext<string[],NSError>(completionHandler);
             
             CKContainer_fetchAllLongLivedOperationIDsWithCompletionHandler(
                 Handle, 
@@ -351,20 +371,19 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<string[],NSError>> FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks = new Dictionary<InvocationRecord,Action<string[],NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<string[],NSError>> FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks = new Dictionary<InvocationRecord,ExecutionContext<string[],NSError>>();
 
         [MonoPInvokeCallback(typeof(CKLongLivedOperationIdsDelegate))]
         private static void FetchAllLongLivedOperationIDsWithCompletionHandlerCallback(IntPtr thisPtr, ulong invocationId, IntPtr[] outstandingOperationIDs,
 		long outstandingOperationIDsCount, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks[invocation];
+            var executionContext = FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks[invocation];
             FetchAllLongLivedOperationIDsWithCompletionHandlerCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     outstandingOperationIDs == null ? null : outstandingOperationIDs.Select(x => Marshal.PtrToStringAuto(x)).ToArray(),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -379,7 +398,7 @@ namespace HovelHouse.CloudKit
         { 
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchUserRecordIDWithCompletionHandlerCallbacks[completionHandlerCall] = completionHandler;
+            FetchUserRecordIDWithCompletionHandlerCallbacks[completionHandlerCall] = new ExecutionContext<CKRecordID,NSError>(completionHandler);
             
             CKContainer_fetchUserRecordIDWithCompletionHandler(
                 Handle, 
@@ -394,19 +413,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKRecordID,NSError>> FetchUserRecordIDWithCompletionHandlerCallbacks = new Dictionary<InvocationRecord,Action<CKRecordID,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKRecordID,NSError>> FetchUserRecordIDWithCompletionHandlerCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKRecordID,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKRecordIDDelegate))]
         private static void FetchUserRecordIDWithCompletionHandlerCallback(IntPtr thisPtr, ulong invocationId, IntPtr _recordID, IntPtr _error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchUserRecordIDWithCompletionHandlerCallbacks[invocation];
+            var executionContext = FetchUserRecordIDWithCompletionHandlerCallbacks[invocation];
             FetchUserRecordIDWithCompletionHandlerCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     _recordID == IntPtr.Zero ? null : new CKRecordID(_recordID),
-                    _error == IntPtr.Zero ? null : new NSError(_error)));
+                    _error == IntPtr.Zero ? null : new NSError(_error));
         }
 
         
@@ -425,7 +443,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            DiscoverUserIdentityWithEmailAddressCallbacks[completionHandlerCall] = completionHandler;
+            DiscoverUserIdentityWithEmailAddressCallbacks[completionHandlerCall] = new ExecutionContext<CKUserIdentity,NSError>(completionHandler);
             
             CKContainer_discoverUserIdentityWithEmailAddress_completionHandler(
                 Handle, 
@@ -442,19 +460,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKUserIdentity,NSError>> DiscoverUserIdentityWithEmailAddressCallbacks = new Dictionary<InvocationRecord,Action<CKUserIdentity,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKUserIdentity,NSError>> DiscoverUserIdentityWithEmailAddressCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKUserIdentity,NSError>>();
 
         [MonoPInvokeCallback(typeof(UserIdentityDelegate))]
         private static void DiscoverUserIdentityWithEmailAddressCallback(IntPtr thisPtr, ulong invocationId, IntPtr userIdentity, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = DiscoverUserIdentityWithEmailAddressCallbacks[invocation];
+            var executionContext = DiscoverUserIdentityWithEmailAddressCallbacks[invocation];
             DiscoverUserIdentityWithEmailAddressCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     userIdentity == IntPtr.Zero ? null : new CKUserIdentity(userIdentity),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -473,7 +490,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchShareParticipantWithEmailAddressCallbacks[completionHandlerCall] = completionHandler;
+            FetchShareParticipantWithEmailAddressCallbacks[completionHandlerCall] = new ExecutionContext<CKShareParticipant,NSError>(completionHandler);
             
             CKContainer_fetchShareParticipantWithEmailAddress_completionHandler(
                 Handle, 
@@ -490,19 +507,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKShareParticipant,NSError>> FetchShareParticipantWithEmailAddressCallbacks = new Dictionary<InvocationRecord,Action<CKShareParticipant,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKShareParticipant,NSError>> FetchShareParticipantWithEmailAddressCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKShareParticipant,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKShareParticipantDelegate))]
         private static void FetchShareParticipantWithEmailAddressCallback(IntPtr thisPtr, ulong invocationId, IntPtr shareParticipant, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchShareParticipantWithEmailAddressCallbacks[invocation];
+            var executionContext = FetchShareParticipantWithEmailAddressCallbacks[invocation];
             FetchShareParticipantWithEmailAddressCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     shareParticipant == IntPtr.Zero ? null : new CKShareParticipant(shareParticipant),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -521,7 +537,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchShareParticipantWithPhoneNumberCallbacks[completionHandlerCall] = completionHandler;
+            FetchShareParticipantWithPhoneNumberCallbacks[completionHandlerCall] = new ExecutionContext<CKShareParticipant,NSError>(completionHandler);
             
             CKContainer_fetchShareParticipantWithPhoneNumber_completionHandler(
                 Handle, 
@@ -538,19 +554,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKShareParticipant,NSError>> FetchShareParticipantWithPhoneNumberCallbacks = new Dictionary<InvocationRecord,Action<CKShareParticipant,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKShareParticipant,NSError>> FetchShareParticipantWithPhoneNumberCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKShareParticipant,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKShareParticipantDelegate))]
         private static void FetchShareParticipantWithPhoneNumberCallback(IntPtr thisPtr, ulong invocationId, IntPtr shareParticipant, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchShareParticipantWithPhoneNumberCallbacks[invocation];
+            var executionContext = FetchShareParticipantWithPhoneNumberCallbacks[invocation];
             FetchShareParticipantWithPhoneNumberCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     shareParticipant == IntPtr.Zero ? null : new CKShareParticipant(shareParticipant),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -569,7 +584,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchShareParticipantWithUserRecordIDCallbacks[completionHandlerCall] = completionHandler;
+            FetchShareParticipantWithUserRecordIDCallbacks[completionHandlerCall] = new ExecutionContext<CKShareParticipant,NSError>(completionHandler);
             
             CKContainer_fetchShareParticipantWithUserRecordID_completionHandler(
                 Handle, 
@@ -586,19 +601,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKShareParticipant,NSError>> FetchShareParticipantWithUserRecordIDCallbacks = new Dictionary<InvocationRecord,Action<CKShareParticipant,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKShareParticipant,NSError>> FetchShareParticipantWithUserRecordIDCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKShareParticipant,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKShareParticipantDelegate))]
         private static void FetchShareParticipantWithUserRecordIDCallback(IntPtr thisPtr, ulong invocationId, IntPtr shareParticipant, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchShareParticipantWithUserRecordIDCallbacks[invocation];
+            var executionContext = FetchShareParticipantWithUserRecordIDCallbacks[invocation];
             FetchShareParticipantWithUserRecordIDCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     shareParticipant == IntPtr.Zero ? null : new CKShareParticipant(shareParticipant),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -617,7 +631,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchLongLivedOperationWithIDCallbacks[completionHandlerCall] = completionHandler;
+            FetchLongLivedOperationWithIDCallbacks[completionHandlerCall] = new ExecutionContext<CKOperation,NSError>(completionHandler);
             
             CKContainer_fetchLongLivedOperationWithID_completionHandler(
                 Handle, 
@@ -634,19 +648,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKOperation,NSError>> FetchLongLivedOperationWithIDCallbacks = new Dictionary<InvocationRecord,Action<CKOperation,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKOperation,NSError>> FetchLongLivedOperationWithIDCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKOperation,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKLongLivedOperationDelegate))]
         private static void FetchLongLivedOperationWithIDCallback(IntPtr thisPtr, ulong invocationId, IntPtr operationID, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchLongLivedOperationWithIDCallbacks[invocation];
+            var executionContext = FetchLongLivedOperationWithIDCallbacks[invocation];
             FetchLongLivedOperationWithIDCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     operationID == IntPtr.Zero ? null : new CKOperation(operationID),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -665,7 +678,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            AcceptShareMetadataCallbacks[completionHandlerCall] = completionHandler;
+            AcceptShareMetadataCallbacks[completionHandlerCall] = new ExecutionContext<CKShare,NSError>(completionHandler);
             
             CKContainer_acceptShareMetadata_completionHandler(
                 Handle, 
@@ -682,19 +695,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKShare,NSError>> AcceptShareMetadataCallbacks = new Dictionary<InvocationRecord,Action<CKShare,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKShare,NSError>> AcceptShareMetadataCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKShare,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKShareDelegate))]
         private static void AcceptShareMetadataCallback(IntPtr thisPtr, ulong invocationId, IntPtr acceptedShare, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = AcceptShareMetadataCallbacks[invocation];
+            var executionContext = AcceptShareMetadataCallbacks[invocation];
             AcceptShareMetadataCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     acceptedShare == IntPtr.Zero ? null : new CKShare(acceptedShare),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -711,7 +723,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            RequestApplicationPermissionCallbacks[completionHandlerCall] = completionHandler;
+            RequestApplicationPermissionCallbacks[completionHandlerCall] = new ExecutionContext<CKApplicationPermissionStatus,NSError>(completionHandler);
             
             CKContainer_requestApplicationPermission_completionHandler(
                 Handle, 
@@ -728,19 +740,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKApplicationPermissionStatus,NSError>> RequestApplicationPermissionCallbacks = new Dictionary<InvocationRecord,Action<CKApplicationPermissionStatus,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKApplicationPermissionStatus,NSError>> RequestApplicationPermissionCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKApplicationPermissionStatus,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKApplicationPermissionsDelegate))]
         private static void RequestApplicationPermissionCallback(IntPtr thisPtr, ulong invocationId, CKApplicationPermissionStatus applicationPermissionsStatus, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = RequestApplicationPermissionCallbacks[invocation];
+            var executionContext = RequestApplicationPermissionCallbacks[invocation];
             RequestApplicationPermissionCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     applicationPermissionsStatus,
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -755,7 +766,7 @@ namespace HovelHouse.CloudKit
         { 
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            AccountStatusWithCompletionHandlerCallbacks[completionHandlerCall] = completionHandler;
+            AccountStatusWithCompletionHandlerCallbacks[completionHandlerCall] = new ExecutionContext<CKAccountStatus,NSError>(completionHandler);
             
             CKContainer_accountStatusWithCompletionHandler(
                 Handle, 
@@ -770,19 +781,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKAccountStatus,NSError>> AccountStatusWithCompletionHandlerCallbacks = new Dictionary<InvocationRecord,Action<CKAccountStatus,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKAccountStatus,NSError>> AccountStatusWithCompletionHandlerCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKAccountStatus,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKAccountStatusDelegate))]
         private static void AccountStatusWithCompletionHandlerCallback(IntPtr thisPtr, ulong invocationId, CKAccountStatus accountStatus, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = AccountStatusWithCompletionHandlerCallbacks[invocation];
+            var executionContext = AccountStatusWithCompletionHandlerCallbacks[invocation];
             AccountStatusWithCompletionHandlerCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     accountStatus,
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -799,7 +809,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            StatusForApplicationPermissionCallbacks[completionHandlerCall] = completionHandler;
+            StatusForApplicationPermissionCallbacks[completionHandlerCall] = new ExecutionContext<CKApplicationPermissionStatus,NSError>(completionHandler);
             
             CKContainer_statusForApplicationPermission_completionHandler(
                 Handle, 
@@ -816,19 +826,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKApplicationPermissionStatus,NSError>> StatusForApplicationPermissionCallbacks = new Dictionary<InvocationRecord,Action<CKApplicationPermissionStatus,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKApplicationPermissionStatus,NSError>> StatusForApplicationPermissionCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKApplicationPermissionStatus,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKApplicationPermissionsDelegate))]
         private static void StatusForApplicationPermissionCallback(IntPtr thisPtr, ulong invocationId, CKApplicationPermissionStatus applicationPermissionsStatus, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = StatusForApplicationPermissionCallbacks[invocation];
+            var executionContext = StatusForApplicationPermissionCallbacks[invocation];
             StatusForApplicationPermissionCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     applicationPermissionsStatus,
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -872,7 +881,7 @@ namespace HovelHouse.CloudKit
             
             
             var completionHandlerCall = new InvocationRecord(Handle);
-            FetchShareMetadataWithURLCallbacks[completionHandlerCall] = completionHandler;
+            FetchShareMetadataWithURLCallbacks[completionHandlerCall] = new ExecutionContext<CKShareMetadata,NSError>(completionHandler);
             
             CKContainer_fetchShareMetadataWithURL_completionHandler(
                 Handle, 
@@ -889,19 +898,18 @@ namespace HovelHouse.CloudKit
             
         }
         
-        private static readonly Dictionary<InvocationRecord,Action<CKShareMetadata,NSError>> FetchShareMetadataWithURLCallbacks = new Dictionary<InvocationRecord,Action<CKShareMetadata,NSError>>();
+        private static readonly Dictionary<InvocationRecord,ExecutionContext<CKShareMetadata,NSError>> FetchShareMetadataWithURLCallbacks = new Dictionary<InvocationRecord,ExecutionContext<CKShareMetadata,NSError>>();
 
         [MonoPInvokeCallback(typeof(CKShareMetadataDelegate))]
         private static void FetchShareMetadataWithURLCallback(IntPtr thisPtr, ulong invocationId, IntPtr metadata, IntPtr error)
         {
             var invocation = new InvocationRecord(thisPtr, invocationId);
-            var callback = FetchShareMetadataWithURLCallbacks[invocation];
+            var executionContext = FetchShareMetadataWithURLCallbacks[invocation];
             FetchShareMetadataWithURLCallbacks.Remove(invocation);
             
-            Dispatcher.Instance.EnqueueOnMainThread(() =>
-                callback(
+            executionContext.Invoke(
                     metadata == IntPtr.Zero ? null : new CKShareMetadata(metadata),
-                    error == IntPtr.Zero ? null : new NSError(error)));
+                    error == IntPtr.Zero ? null : new NSError(error));
         }
 
         
@@ -954,17 +962,14 @@ namespace HovelHouse.CloudKit
         
 
         
-        private static readonly Dictionary<IntPtr,Action<NSNotification>> AccountChangedNotificationHandlers = new Dictionary<IntPtr,Action<NSNotification>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<NSNotification>> AccountChangedNotificationHandlers = new Dictionary<IntPtr,ExecutionContext<NSNotification>>();
 
         [MonoPInvokeCallback(typeof(NotificationDelegate))]
         private static void CKAccountChangedNotificationStaticHandler(IntPtr ptr, IntPtr notification)
         {
-            Action<NSNotification> handler = null;
-            if(AccountChangedNotificationHandlers.TryGetValue(ptr, out handler))
+            if(AccountChangedNotificationHandlers.TryGetValue(ptr, out ExecutionContext<NSNotification> handler))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => {
-                    handler.Invoke(ptr == IntPtr.Zero ? null : new NSNotification(notification));
-                });
+                handler.Invoke(ptr == IntPtr.Zero ? null : new NSNotification(notification));
             }
         }
 
@@ -980,7 +985,7 @@ namespace HovelHouse.CloudKit
                 throw new CloudKitException(nativeException, nativeException.Reason);
             }
 
-            AccountChangedNotificationHandlers[observerHandle] = observer;
+            AccountChangedNotificationHandlers[observerHandle] = new ExecutionContext<NSNotification>(observer);
 
             return observerHandle == IntPtr.Zero ? null : new Unsubscriber(observerHandle);
         }
@@ -1005,7 +1010,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKContainer_Dispose(HandleRef handle);
             

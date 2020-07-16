@@ -1,7 +1,7 @@
 //
 //  CKQueryOperation.cs
 //
-//  Created by Jonathan Culp <jonathanculp@gmail.com> on 03/26/2020
+//  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
 //  Copyright © 2020 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
@@ -31,7 +31,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKQueryOperation_init(
             out IntPtr exceptionPtr
@@ -40,7 +40,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKQueryOperation_initWithQuery(
             IntPtr query, 
@@ -50,7 +50,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKQueryOperation_initWithCursor(
             IntPtr cursor, 
@@ -67,57 +67,63 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKQueryOperation_GetPropQuery(HandleRef ptr);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKQueryOperation_SetPropQuery(HandleRef ptr, IntPtr query, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKQueryOperation_GetPropCursor(HandleRef ptr);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKQueryOperation_SetPropCursor(HandleRef ptr, IntPtr cursor, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKQueryOperation_GetPropZoneID(HandleRef ptr);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKQueryOperation_SetPropZoneID(HandleRef ptr, IntPtr zoneID, out IntPtr exceptionPtr);
+
         // TODO: DLLPROPERTYSTRINGARRAY
+
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKQueryOperation_SetPropRecordFetchedHandler(HandleRef ptr, RecordFetchedDelegate recordFetchedHandler, out IntPtr exceptionPtr);
+
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKQueryOperation_SetPropQueryCompletionHandler(HandleRef ptr, QueryCompletionDelegate queryCompletionHandler, out IntPtr exceptionPtr);
+
         
 
         #endregion
@@ -243,9 +249,10 @@ namespace HovelHouse.CloudKit
         {
             get 
             {
-                Action<CKRecord> value;
-                RecordFetchedHandlerCallbacks.TryGetValue(HandleRef.ToIntPtr(Handle), out value);
-                return value;
+                RecordFetchedHandlerCallbacks.TryGetValue(
+                    HandleRef.ToIntPtr(Handle), 
+                    out ExecutionContext<CKRecord> value);
+                return value.Callback;
             }    
             set 
             {
@@ -256,7 +263,7 @@ namespace HovelHouse.CloudKit
                 }
                 else
                 {
-                    RecordFetchedHandlerCallbacks[myPtr] = value;
+                    RecordFetchedHandlerCallbacks[myPtr] = new ExecutionContext<CKRecord>(value);
                 }
                 CKQueryOperation_SetPropRecordFetchedHandler(Handle, RecordFetchedHandlerCallback, out IntPtr exceptionPtr);
 
@@ -268,16 +275,15 @@ namespace HovelHouse.CloudKit
             }
         }
 
-        private static readonly Dictionary<IntPtr,Action<CKRecord>> RecordFetchedHandlerCallbacks = new Dictionary<IntPtr,Action<CKRecord>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<CKRecord>> RecordFetchedHandlerCallbacks = new Dictionary<IntPtr,ExecutionContext<CKRecord>>();
 
         [MonoPInvokeCallback(typeof(RecordFetchedDelegate))]
         private static void RecordFetchedHandlerCallback(IntPtr thisPtr, IntPtr _record)
         {
-            if(RecordFetchedHandlerCallbacks.TryGetValue(thisPtr, out Action<CKRecord> callback))
+            if(RecordFetchedHandlerCallbacks.TryGetValue(thisPtr, out ExecutionContext<CKRecord> callback))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => 
-                    callback(
-                        _record == IntPtr.Zero ? null : new CKRecord(_record)));
+                callback.Invoke(
+                        _record == IntPtr.Zero ? null : new CKRecord(_record));
             }
         }
 
@@ -287,9 +293,10 @@ namespace HovelHouse.CloudKit
         {
             get 
             {
-                Action<CKQueryCursor,NSError> value;
-                QueryCompletionHandlerCallbacks.TryGetValue(HandleRef.ToIntPtr(Handle), out value);
-                return value;
+                QueryCompletionHandlerCallbacks.TryGetValue(
+                    HandleRef.ToIntPtr(Handle), 
+                    out ExecutionContext<CKQueryCursor,NSError> value);
+                return value.Callback;
             }    
             set 
             {
@@ -300,7 +307,7 @@ namespace HovelHouse.CloudKit
                 }
                 else
                 {
-                    QueryCompletionHandlerCallbacks[myPtr] = value;
+                    QueryCompletionHandlerCallbacks[myPtr] = new ExecutionContext<CKQueryCursor,NSError>(value);
                 }
                 CKQueryOperation_SetPropQueryCompletionHandler(Handle, QueryCompletionHandlerCallback, out IntPtr exceptionPtr);
 
@@ -312,17 +319,16 @@ namespace HovelHouse.CloudKit
             }
         }
 
-        private static readonly Dictionary<IntPtr,Action<CKQueryCursor,NSError>> QueryCompletionHandlerCallbacks = new Dictionary<IntPtr,Action<CKQueryCursor,NSError>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<CKQueryCursor,NSError>> QueryCompletionHandlerCallbacks = new Dictionary<IntPtr,ExecutionContext<CKQueryCursor,NSError>>();
 
         [MonoPInvokeCallback(typeof(QueryCompletionDelegate))]
         private static void QueryCompletionHandlerCallback(IntPtr thisPtr, IntPtr _cursor, IntPtr _operationError)
         {
-            if(QueryCompletionHandlerCallbacks.TryGetValue(thisPtr, out Action<CKQueryCursor,NSError> callback))
+            if(QueryCompletionHandlerCallbacks.TryGetValue(thisPtr, out ExecutionContext<CKQueryCursor,NSError> callback))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => 
-                    callback(
+                callback.Invoke(
                         _cursor == IntPtr.Zero ? null : new CKQueryCursor(_cursor),
-                        _operationError == IntPtr.Zero ? null : new NSError(_operationError)));
+                        _operationError == IntPtr.Zero ? null : new NSError(_operationError));
             }
         }
 
@@ -335,7 +341,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKQueryOperation_Dispose(HandleRef handle);
             

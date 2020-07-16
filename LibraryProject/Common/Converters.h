@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Converters : NSObject
 +(NSArray*) BridgedArray: (void*_Nonnull*_Nullable) arr withCount:(long) count;
++(NSArray*) StringArray: (const char**)arr withCount:(long) count;
 +(void) NSArrayToRetainedCArray: (NSArray*) array withBuffer:(void* _Nonnull[_Nonnull]) buffer;
 +(const void**) NSArrayToUnretainedCArray: (NSArray*) array;
 +(const void**) NSArrayToRetainedCArray: (NSArray*) array;

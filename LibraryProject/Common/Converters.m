@@ -23,6 +23,20 @@
     return arr;
 }
 
++(NSArray*) StringArray:(const char**)arr2 withCount:(long)count
+{
+    if(arr2 == nil)
+        return nil;
+    
+    NSMutableArray* arr = [[NSMutableArray alloc] init];
+    for(int i = 0; i < count; i++)
+    {
+        NSString* str = [NSString stringWithUTF8String:arr2[i]];
+        [arr addObject:str];
+    }
+    return arr;
+}
+
 +(void) NSArrayToRetainedCArray:(NSArray*) array withBuffer:(void **)buffer
 {
     if(array == nil)

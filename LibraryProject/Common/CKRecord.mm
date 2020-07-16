@@ -203,6 +203,17 @@ void* CKRecord_assetForKey(
 }
 
 
+void* CKRecord_referenceForKey(
+    void* ptr,
+    const char* key
+    )
+{
+    CKRecord* iCKRecord = (__bridge CKRecord*) ptr;
+	CKReference* val = [iCKRecord objectForKey:[NSString stringWithUTF8String:key]];
+	return (__bridge_retained void*) val;
+}
+
+
 //VoidMethods
 void CKRecord_encodeSystemFieldsWithCoder(
     void* ptr,

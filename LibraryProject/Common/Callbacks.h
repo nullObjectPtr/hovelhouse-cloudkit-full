@@ -64,8 +64,14 @@ typedef void (*shareParticipantFetchedCallback)(void* ptr, void* _participant);
 typedef void (*longLivedOperationWasPersistedCallback)(void* ptr);
 typedef void (*queryCompletionCallback)(void* ptr, void* _cursor, void* _operationError);
 typedef void (*recordFetchedCallback)(void* ptr, void* _record);
+typedef void (*modifySubscriptionsCompletionCallback)(void* ptr, void* savedSubscriptions[],
+	long savedSubscriptionsCount, const char* deletedSubscriptionIDs[],
+	long deletedSubscriptionIDsCount, void* operationError);
+typedef void (*fetchSubscriptionCompletionCallback)(void* ptr, void* subscriptionsBySubscriptionIDKeys[], void* subscriptionsBySubscriptionIDValues[], long subscriptionsBySubscriptionIDCount, void* operationError);
 
 
 typedef void* (*NSUbiquitousKeyValueStoreDidChangeExternallyCallback)(void* unsub, NSInteger reason, const char** changedKeys, NSInteger count);
 
 typedef void (*NotificationHandler)(void* unsub, void* notification);
+typedef void (*CKNotificationHandler)(void* notification, const char* className);
+typedef void (*RegisterForNotificationsCallback)(const void* token, unsigned long length, void* errorPtr);

@@ -14,6 +14,22 @@ extern "C" {
 
 //ClassMethods
 //InitMethods
+void* CKNotificationInfo_init(
+    void** exceptionPtr)
+{
+    @try 
+    {
+        CKNotificationInfo* iCKNotificationInfo = [[CKNotificationInfo alloc] init];
+            return (__bridge_retained void*) iCKNotificationInfo;
+    }
+    @catch(NSException* ex)
+    {
+        *exceptionPtr = (__bridge_retained void*)ex;
+    }
+
+    return nil;
+}
+
 //InstanceMethods
 //VoidMethods
 //Properties

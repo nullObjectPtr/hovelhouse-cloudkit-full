@@ -6,30 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/_Examples_.unity
-    guid: f0b1ce436e3234494935cb45a1ed21d4
+    path: Assets/ExampleHub/Scenes/_Examples_.unity
+    guid: 46368785c6b6f479eb34b90c86c5b8d9
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example1_HelloWorld.unity
-    guid: 9e88fe8f7a2b44b11b8d13193b2b0c9b
+    path: Assets/ExampleHub/Scenes/Example1_HelloWorld.unity
+    guid: 7dd07b80c4ce34b2892b124cf75ae2e7
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example2_BasicDatabaseOperations.unity
-    guid: a63541dbda64e4fe58ae4e0b83998d3b
+    path: Assets/ExampleHub/Scenes/Example2_BasicDatabaseOperations.unity
+    guid: 65c912f62c950487ab0787b71243ecf6
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example3_Querying.unity
-    guid: e2e1b034b73224168aa3f7fd5d5b00f1
+    path: Assets/ExampleHub/Scenes/Example3_Querying.unity
+    guid: 5be5951ac6a3f4b03842ed3c62be1b89
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example4_CKAsset.unity
-    guid: ff65da112883143b891d6fd756ced1df
+    path: Assets/ExampleHub/Scenes/Example4_CKAsset.unity
+    guid: 3f1d4f6682cd449aa9f3033069bd33ef
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example5_Zones.unity
-    guid: 1b0f58b916f0847c89dc11a3992b5590
+    path: Assets/ExampleHub/Scenes/Example5_Zones.unity
+    guid: 468f4691d21fc4f4ba8e5eba3494afbb
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example6_Progress.unity
-    guid: bc2f65806aa1f41ad903b43949777792
+    path: Assets/ExampleHub/Scenes/Example6_Progress.unity
+    guid: e36023b9faaf6422984c2390f4639f4a
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example7_AccountStatus.unity
-    guid: ea5d9c6be4b1f466bbb5f91ee30a4cb4
+    path: Assets/ExampleHub/Scenes/Example7_AccountStatus.unity
+    guid: 9638b8828bdc2491da54e02c715f08e9
   - enabled: 1
-    path: Packages/com.hovelhouse.cloudkit/Samples/ExampleHub/Scenes/Example8_KeyValueStore.unity
-    guid: b8e5dc5b9df63428594092df79e0d614
+    path: Assets/ExampleHub/Scenes/Example8_KeyValueStore.unity
+    guid: 5c3156bc8019b441eb28c86445924cd8
+  - enabled: 1
+    path: Assets/ExampleHub/Scenes/Example9_Subscriptions.unity
+    guid: 2b8ca42020f844f0b905ebfd7eb46e9f
   m_configObjects: {}

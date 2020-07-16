@@ -1,7 +1,7 @@
 //
 //  CKModifyRecordZonesOperation.cs
 //
-//  Created by Jonathan Culp <jonathanculp@gmail.com> on 03/26/2020
+//  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
 //  Copyright © 2020 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
@@ -31,7 +31,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKModifyRecordZonesOperation_init(
             out IntPtr exceptionPtr
@@ -40,7 +40,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern IntPtr CKModifyRecordZonesOperation_initWithRecordZonesToSave_recordZoneIDsToDelete(
             [MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.SysInt, SizeParamIndex = 2)]
@@ -61,39 +61,42 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordZonesOperation_SetPropModifyRecordZonesCompletionHandler(HandleRef ptr, ModifyRecordZonesCompletionDelegate modifyRecordZonesCompletionHandler, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordZonesOperation_GetPropRecordZonesToSave(HandleRef ptr, ref IntPtr buffer, ref long count);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordZonesOperation_SetPropRecordZonesToSave(HandleRef ptr, IntPtr[] recordZonesToSave,
 			int recordZonesToSaveCount, out IntPtr exceptionPtr);
+
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordZonesOperation_GetPropRecordZoneIDsToDelete(HandleRef ptr, ref IntPtr buffer, ref long count);
         
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordZonesOperation_SetPropRecordZoneIDsToDelete(HandleRef ptr, IntPtr[] recordZoneIDsToDelete,
 			int recordZoneIDsToDeleteCount, out IntPtr exceptionPtr);
+
         
 
         #endregion
@@ -153,9 +156,10 @@ namespace HovelHouse.CloudKit
         {
             get 
             {
-                Action<CKRecordZone[],CKRecordZoneID[],NSError> value;
-                ModifyRecordZonesCompletionHandlerCallbacks.TryGetValue(HandleRef.ToIntPtr(Handle), out value);
-                return value;
+                ModifyRecordZonesCompletionHandlerCallbacks.TryGetValue(
+                    HandleRef.ToIntPtr(Handle), 
+                    out ExecutionContext<CKRecordZone[],CKRecordZoneID[],NSError> value);
+                return value.Callback;
             }    
             set 
             {
@@ -166,7 +170,7 @@ namespace HovelHouse.CloudKit
                 }
                 else
                 {
-                    ModifyRecordZonesCompletionHandlerCallbacks[myPtr] = value;
+                    ModifyRecordZonesCompletionHandlerCallbacks[myPtr] = new ExecutionContext<CKRecordZone[],CKRecordZoneID[],NSError>(value);
                 }
                 CKModifyRecordZonesOperation_SetPropModifyRecordZonesCompletionHandler(Handle, ModifyRecordZonesCompletionHandlerCallback, out IntPtr exceptionPtr);
 
@@ -178,20 +182,19 @@ namespace HovelHouse.CloudKit
             }
         }
 
-        private static readonly Dictionary<IntPtr,Action<CKRecordZone[],CKRecordZoneID[],NSError>> ModifyRecordZonesCompletionHandlerCallbacks = new Dictionary<IntPtr,Action<CKRecordZone[],CKRecordZoneID[],NSError>>();
+        private static readonly Dictionary<IntPtr,ExecutionContext<CKRecordZone[],CKRecordZoneID[],NSError>> ModifyRecordZonesCompletionHandlerCallbacks = new Dictionary<IntPtr,ExecutionContext<CKRecordZone[],CKRecordZoneID[],NSError>>();
 
         [MonoPInvokeCallback(typeof(ModifyRecordZonesCompletionDelegate))]
         private static void ModifyRecordZonesCompletionHandlerCallback(IntPtr thisPtr, IntPtr[] _savedRecordZones,
 		long _savedRecordZonesCount, IntPtr[] _deletedRecordZoneIDs,
 		long _deletedRecordZoneIDsCount, IntPtr _operationError)
         {
-            if(ModifyRecordZonesCompletionHandlerCallbacks.TryGetValue(thisPtr, out Action<CKRecordZone[],CKRecordZoneID[],NSError> callback))
+            if(ModifyRecordZonesCompletionHandlerCallbacks.TryGetValue(thisPtr, out ExecutionContext<CKRecordZone[],CKRecordZoneID[],NSError> callback))
             {
-                Dispatcher.Instance.EnqueueOnMainThread(() => 
-                    callback(
+                callback.Invoke(
                         _savedRecordZones == null ? null : _savedRecordZones.Select(x => new CKRecordZone(x)).ToArray(),
                         _deletedRecordZoneIDs == null ? null : _deletedRecordZoneIDs.Select(x => new CKRecordZoneID(x)).ToArray(),
-                        _operationError == IntPtr.Zero ? null : new NSError(_operationError)));
+                        _operationError == IntPtr.Zero ? null : new NSError(_operationError));
             }
         }
 
@@ -276,7 +279,7 @@ namespace HovelHouse.CloudKit
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
-        [DllImport("HHCloudKit")]
+        [DllImport("HHCloudKitMacOS")]
         #endif
         private static extern void CKModifyRecordZonesOperation_Dispose(HandleRef handle);
             

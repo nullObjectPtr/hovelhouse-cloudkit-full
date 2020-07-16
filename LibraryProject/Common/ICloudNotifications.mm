@@ -9,10 +9,30 @@
 #import <CloudKit/CloudKit.h>
 #import "ICloudNotifications.h"
 #import "Converters.h"
+#import <UserNotifications/UserNotifications.h>
 
 extern "C" {
 
 //ClassMethods
+
+void OnRemoteNotification(CKNotification* cloudKitNotification)
+{
+    NSLog(@"On Remote Notification");
+    if(cloudKitNotification != nil && myCKNotificationHandler != nil)
+    {
+        NSString* className = NSStringFromClass([cloudKitNotification class]);
+        myCKNotificationHandler(
+                                (__bridge_retained void*)cloudKitNotification,
+                                [className UTF8String]);
+    }
+}
+
+void SetNotificationHandler(CKNotificationHandler handler)
+{
+    NSLog(@"Set notification handler...");
+    myCKNotificationHandler = handler;
+}
+
 //InitMethods
 //InstanceMethods
 //VoidMethods
@@ -49,7 +69,5 @@ void RemoveNSUbiquityIdentityDidChangeNotificationObserver(void* observerHandle,
         *exceptionPtr = (__bridge_retained void*) exception;
     }
 }
-
-
 
 }

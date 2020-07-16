@@ -12,9 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d01773f6ffd4e51b62a507f7698062, type: 3}
   m_Name: HovelHouseCloudKitBuildSettings
   m_EditorClassIdentifier: 
-  EnablePostProcessBuild: 1
   EnableCloudKit: 1
-  EnableKeyVaueStorage: 1
+  EnableKeyVaueStorage: 0
   EnableDocumentStorage: 0
   AddDefaultContainers: 1
   CustomContainers: []
+  EnablePostProcessXCodeProject: 1
+  EnablePostProcessMacOS: 1
+  CodeSigningIdentity: 'Mac Developer: Jonathan Culp (4R5FTQ7PW8)'
+  ProvisioningProfilePath: /Users/jonathan/Downloads/Unity_Cloud_Kit_Plugin_Mac_OS_Dev.provisionprofile
+  PerformMergePlistsStep: 0
+  PerformMergeEntitlementsStep: 1
+  PlistPath: 
+  EntitlementsPath: 
+  EnableCloudKitNotifications: 1
+  apsEnvironment: 0
+  BackgroundModes: 256

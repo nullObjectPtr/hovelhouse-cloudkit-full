@@ -3,3 +3,5 @@
 [Bb]uild/
 [Bb]uilds/
 **/xcuserdata
+
+.DS_Store

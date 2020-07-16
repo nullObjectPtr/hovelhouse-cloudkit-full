@@ -1,7 +1,7 @@
 //
 //  CKRecord.h
 //
-//  Created by Jonathan Culp <jonathanculp@gmail.com> on 03/26/2020
+//  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
 //  Copyright © 2020 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
@@ -58,6 +58,9 @@ extern "C" const char* CKRecord_stringForKey(
 extern "C" NSInteger CKRecord_intForKey(void* ptr, const char* key, void** error);
 extern "C" double CKRecord_doubleForKey(void* ptr, const char* key, void** error);
 extern "C" void* CKRecord_assetForKey(
+    void* ptr,
+    const char* key);
+extern "C" void* CKRecord_referenceForKey(
     void* ptr,
     const char* key);
 
