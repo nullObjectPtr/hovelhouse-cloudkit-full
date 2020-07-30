@@ -30,19 +30,24 @@ static RegisterForNotificationsCallback _registerForNotificationsCallback;
 
 -(void) BeginTheSwizzle
 {
-    Class unityAppController = NSClassFromString(@"PlayerAppDelegate");
-    
-    Class overrideAppController = OverrideAppDelegate.class;
-    
-    [EPPZSwizzler setLogging:YES];
+    if([self HasSwizzledImplementations] == NO)
+    {
+        Class unityAppController = NSClassFromString(@"PlayerAppDelegate");
+        
+        Class overrideAppController = OverrideAppDelegate.class;
+        
+        [EPPZSwizzler setLogging:YES];
 
-    [EPPZSwizzler replaceAppDelegateMethod:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didRegisterForRemoteNotificationsWithDeviceToken:)];
+        [EPPZSwizzler replaceAppDelegateMethod:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didRegisterForRemoteNotificationsWithDeviceToken:)];
+        
+        [EPPZSwizzler
+         replaceAppDelegateMethod:@selector(application:didFailToRegisterForRemoteNotificationsWithError:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didFailToRegisterForRemoteNotificationsWithError:)];
+        
+        [EPPZSwizzler
+         replaceAppDelegateMethod:@selector(application:didReceiveRemoteNotification:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didReceiveRemoteNotification:)];
     
-    [EPPZSwizzler
-     replaceAppDelegateMethod:@selector(application:didFailToRegisterForRemoteNotificationsWithError:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didFailToRegisterForRemoteNotificationsWithError:)];
-    
-    [EPPZSwizzler
-     replaceAppDelegateMethod:@selector(application:didReceiveRemoteNotification:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didReceiveRemoteNotification:)];
+        [self setHasSwizzledImplementations:YES];
+    }
 
     [NSApp registerForRemoteNotifications];
 }

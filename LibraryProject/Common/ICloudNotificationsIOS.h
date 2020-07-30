@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 
 @interface OverrideAppDelegate : NSObject
+@property bool HasSwizzledImplementations;
 -(void) BeginTheSwizzle;
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
@@ -19,6 +20,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary<NSString *,id> *)userInfo;
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
 
 - (void)baseApplication:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
@@ -26,6 +29,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
 - (void)baseApplication:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary<NSString *,id> *)userInfo;
+- (void)baseApplication:(UIApplication *)application
+didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler;
 @end
 
 extern "C" void RequestNotificationTokenIOS(RegisterForNotificationsCallback callback);

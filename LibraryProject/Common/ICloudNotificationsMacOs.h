@@ -12,6 +12,7 @@
 #import <AppKit/AppKit.h>
 
 @interface OverrideAppDelegate : NSObject
+@property bool HasSwizzledImplementations;
 -(void) BeginTheSwizzle;
 - (void)application:(NSApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;

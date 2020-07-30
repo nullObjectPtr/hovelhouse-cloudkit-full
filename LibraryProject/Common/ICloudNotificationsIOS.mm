@@ -30,19 +30,27 @@ static RegisterForNotificationsCallback _registerForNotificationsCallback;
 
 -(void) BeginTheSwizzle
 {
-    Class unityAppController = NSClassFromString(@"UnityAppController");
-    Class overrideAppController = OverrideAppDelegate.class;
-    
-    [EPPZSwizzler setLogging:YES];
-    
-    [EPPZSwizzler replaceAppDelegateMethod:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didRegisterForRemoteNotificationsWithDeviceToken:)];
-    
-    [EPPZSwizzler
-     replaceAppDelegateMethod:@selector(application:didFailToRegisterForRemoteNotificationsWithError:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didFailToRegisterForRemoteNotificationsWithError:)];
-    
-    [EPPZSwizzler
-     replaceAppDelegateMethod:@selector(application:didReceiveRemoteNotification:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didReceiveRemoteNotification:)];
+    if([self HasSwizzledImplementations] == NO)
+    {
+        Class unityAppController = NSClassFromString(@"UnityAppController");
+        Class overrideAppController = OverrideAppDelegate.class;
 
+        [EPPZSwizzler setLogging:YES];
+
+        [EPPZSwizzler
+         replaceAppDelegateMethod:@selector(application:didReceiveRemoteNotification:fetchCompletionHandler:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didReceiveRemoteNotification:fetchCompletionHandler:)];
+
+        [EPPZSwizzler replaceAppDelegateMethod:@selector(application:didRegisterForRemoteNotificationsWithDeviceToken:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didRegisterForRemoteNotificationsWithDeviceToken:)];
+
+        [EPPZSwizzler
+         replaceAppDelegateMethod:@selector(application:didFailToRegisterForRemoteNotificationsWithError:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didFailToRegisterForRemoteNotificationsWithError:)];
+
+        [EPPZSwizzler
+         replaceAppDelegateMethod:@selector(application:didReceiveRemoteNotification:) targetingClass:unityAppController fromClass:overrideAppController savingOriginalTo:@selector(baseApplication:didReceiveRemoteNotification:)];
+
+        [self setHasSwizzledImplementations:YES];
+    }
+        
     NSLog(@"[HovelHouse - CloudKit] registering for remote notifications");
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
@@ -81,11 +89,24 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 }
 
 - (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary<NSString *,id> *)userInfo
+didReceiveRemoteNotification:(NSDictionary*)userInfo
 {
     if([self respondsToSelector:@selector(baseApplication:didReceiveRemoteNotification:)])
     {
         [self baseApplication:application didReceiveRemoteNotification:userInfo];
+    }
+    
+    CKNotification *cloudKitNotification = [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
+    
+    OnRemoteNotification(cloudKitNotification);
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler
+{
+    if([self respondsToSelector:@selector(baseApplication:didReceiveRemoteNotification:fetchCompletionHandler:)])
+    {
+        [self baseApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
     }
     
     CKNotification *cloudKitNotification = [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
@@ -107,6 +128,12 @@ didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 
 - (void)baseApplication:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary<NSString *,id> *)userInfo
+{
+    // Swizzled implementation gets copied here
+}
+
+- (void)baseApplication:(UIApplication *)application
+didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler
 {
     // Swizzled implementation gets copied here
 }
