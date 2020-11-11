@@ -54,6 +54,13 @@ const char* NSError_GetPropHelpAnchor(void* ptr)
 }
 //TODO: PROPERTYSTRINGARRAY
 
+const char* NSError_GetPropDomain(void* ptr)
+{
+	NSError* iNSError = (__bridge NSError*) ptr;
+	NSString* val = [iNSError domain];
+	return [val UTF8String];
+}
+
 
 void NSError_Dispose(void* ptr)
 {

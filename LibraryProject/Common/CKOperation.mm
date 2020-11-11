@@ -65,6 +65,26 @@ void CKOperation_SetPropGroup(void* ptr, void* group, void** exceptionPtr)
 	}
 }
 
+long CKOperation_GetPropQueuePriority(void* ptr)
+{
+	CKOperation* iCKOperation = (__bridge CKOperation*) ptr;
+	NSOperationQueuePriority val = [iCKOperation queuePriority];
+	return val;
+}
+
+void CKOperation_SetPropQueuePriority(void* ptr, long queuePriority, void** exceptionPtr)
+{
+	@try 
+	{
+		CKOperation* iCKOperation = (__bridge CKOperation*) ptr;
+		[iCKOperation setQueuePriority:(NSOperationQueuePriority)queuePriority];
+	}
+	@catch(NSException* ex) 
+	{
+		*exceptionPtr = (__bridge_retained void*) ex;
+	}
+}
+
 
 void CKOperation_Dispose(void* ptr)
 {

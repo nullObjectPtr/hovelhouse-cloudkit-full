@@ -30,6 +30,19 @@ extern "C" void* NSURL_fileURLWithPath(
 
 // Properties 
 extern "C" const char* NSURL_GetPropAbsoluteString(void* ptr);
+extern "C" void* NSURL_GetPropAbsoluteURL(void* ptr);
+extern "C" void* NSURL_GetPropBaseURL(void* ptr);
+extern "C" const char* NSURL_GetPropLastPathComponent(void* ptr);
+extern "C" const char* NSURL_GetPropHost(void* ptr);
+extern "C" const char* NSURL_GetPropPassword(void* ptr);
+extern "C" const char* NSURL_GetPropPath(void* ptr);// TODO: HEADERPROPERTYSTRINGARRAY
+extern "C" const char* NSURL_GetPropPathExtension(void* ptr);
+extern "C" const char* NSURL_GetPropQuery(void* ptr);
+extern "C" const char* NSURL_GetPropRelativePath(void* ptr);
+extern "C" const char* NSURL_GetPropResourceSpecifier(void* ptr);
+extern "C" const char* NSURL_GetPropScheme(void* ptr);
+extern "C" void* NSURL_GetPropStandardizedURL(void* ptr);
+extern "C" const char* NSURL_GetPropUser(void* ptr);
 
 
 

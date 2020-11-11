@@ -61,6 +61,98 @@ const char* NSURL_GetPropAbsoluteString(void* ptr)
 	return [val UTF8String];
 }
 
+void* NSURL_GetPropAbsoluteURL(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSURL* val = [iNSURL absoluteURL];
+	return (__bridge_retained void*) val;
+}
+
+void* NSURL_GetPropBaseURL(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSURL* val = [iNSURL baseURL];
+	return (__bridge_retained void*) val;
+}
+
+const char* NSURL_GetPropLastPathComponent(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL lastPathComponent];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropHost(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL host];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropPassword(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL password];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropPath(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL path];
+	return [val UTF8String];
+}
+//TODO: PROPERTYSTRINGARRAY
+
+const char* NSURL_GetPropPathExtension(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL pathExtension];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropQuery(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL query];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropRelativePath(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL relativePath];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropResourceSpecifier(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL resourceSpecifier];
+	return [val UTF8String];
+}
+
+const char* NSURL_GetPropScheme(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL scheme];
+	return [val UTF8String];
+}
+
+void* NSURL_GetPropStandardizedURL(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSURL* val = [iNSURL standardizedURL];
+	return (__bridge_retained void*) val;
+}
+
+const char* NSURL_GetPropUser(void* ptr)
+{
+	NSURL* iNSURL = (__bridge NSURL*) ptr;
+	NSString* val = [iNSURL user];
+	return [val UTF8String];
+}
+
 
 void NSURL_Dispose(void* ptr)
 {

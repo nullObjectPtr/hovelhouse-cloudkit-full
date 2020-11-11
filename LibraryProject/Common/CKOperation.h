@@ -26,6 +26,9 @@ extern "C" const char* CKOperation_GetPropOperationID(void* ptr);
 extern "C" void* CKOperation_GetPropGroup(void* ptr);
 extern "C" void CKOperation_SetPropGroup(void* ptr, void* group, void** exceptionPtr);
 
+extern "C" long CKOperation_GetPropQueuePriority(void* ptr);
+extern "C" void CKOperation_SetPropQueuePriority(void* ptr, long queuePriority, void** exceptionPtr);
+
 
 
 

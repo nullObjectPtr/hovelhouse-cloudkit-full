@@ -104,14 +104,20 @@ didReceiveRemoteNotification:(NSDictionary*)userInfo
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler
 {
+    CKNotification *cloudKitNotification = [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
+    
+    OnRemoteNotification(cloudKitNotification);
+    
+    // Some other plugin may have wanted to do something with this call
     if([self respondsToSelector:@selector(baseApplication:didReceiveRemoteNotification:fetchCompletionHandler:)])
     {
         [self baseApplication:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
     }
-    
-    CKNotification *cloudKitNotification = [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
-    
-    OnRemoteNotification(cloudKitNotification);
+    // If not, it's our job to call the completion handler
+    else
+    {
+        completionHandler(UIBackgroundFetchResultNoData);
+    }
 }
 
 - (void)baseApplication:(UIApplication*)application
