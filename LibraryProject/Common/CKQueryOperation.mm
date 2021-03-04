@@ -164,6 +164,26 @@ void CKQueryOperation_SetPropQueryCompletionHandler(void* ptr, queryCompletionCa
 	}
 }
 
+uint CKQueryOperation_GetPropResultsLimit(void* ptr)
+{
+	CKQueryOperation* iCKQueryOperation = (__bridge CKQueryOperation*) ptr;
+	NSUInteger val = [iCKQueryOperation resultsLimit];
+	return val;
+}
+
+void CKQueryOperation_SetPropResultsLimit(void* ptr, uint resultsLimit, void** exceptionPtr)
+{
+	@try 
+	{
+		CKQueryOperation* iCKQueryOperation = (__bridge CKQueryOperation*) ptr;
+		[iCKQueryOperation setResultsLimit:resultsLimit];
+	}
+	@catch(NSException* ex) 
+	{
+		*exceptionPtr = (__bridge_retained void*) ex;
+	}
+}
+
 
 void CKQueryOperation_Dispose(void* ptr)
 {

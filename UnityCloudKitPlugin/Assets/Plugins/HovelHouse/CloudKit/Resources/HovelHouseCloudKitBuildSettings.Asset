@@ -15,14 +15,14 @@ MonoBehaviour:
   EnableCloudKit: 1
   EnableKeyVaueStorage: 0
   EnableDocumentStorage: 0
-  AddDefaultContainers: 0
+  AddDefaultContainers: 1
   CustomContainers: []
   EnablePostProcessXCodeProject: 1
   EnablePostProcessMacOS: 1
   CodeSigningIdentity: 'Mac Developer: Jonathan Culp (4R5FTQ7PW8)'
-  ProvisioningProfilePath: /Users/jonathan/Development/UnityCloudKitPlugin/Unity_Cloud_Kit_Plugin_Mac_OS_Dev.provisionprofile
+  ProvisioningProfilePath: ../BuildHelpers/UnityCloudKitPlugin__MacOS__Dev.provisionprofile
   PerformMergePlistsStep: 0
-  PerformMergeEntitlementsStep: 0
+  PerformMergeEntitlementsStep: 1
   PlistPath: 
   EntitlementsPath: 
   EnableCloudKitNotifications: 1

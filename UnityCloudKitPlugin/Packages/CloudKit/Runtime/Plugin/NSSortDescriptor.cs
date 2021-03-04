@@ -2,7 +2,7 @@
 //  NSSortDescriptor.cs
 //
 //  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
-//  Copyright © 2020 HovelHouseApps. All rights reserved.
+//  Copyright © 2021 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
 //
@@ -23,18 +23,27 @@ namespace HovelHouse.CloudKit
     public class NSSortDescriptor : CKObject, IDisposable
     {
         #region dll
+        
+        #if UNITY_IPHONE || UNITY_TVOS
+        const string dll = "__Internal";
+        #else
+        const string dll = "HHCloudKitMacOS";
+        #endif
 
         // Class Methods
         
+        [DllImport(dll)]
+        private static extern IntPtr NSSortDescriptor_sortDescriptorWithKey_ascending(
+            string key,
+            bool ascending,
+            out IntPtr exceptionPtr);
 
-        
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
-        private static extern IntPtr NSSortDescriptor_initWithCoder(
-            IntPtr coder, 
+
+
+        [DllImport(dll)]
+        private static extern IntPtr NSSortDescriptor_initWithKey_ascending(
+            string key, 
+            bool ascending, 
             out IntPtr exceptionPtr
             );
         
@@ -42,11 +51,7 @@ namespace HovelHouse.CloudKit
         
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern void NSSortDescriptor_allowEvaluation(
             HandleRef ptr, 
             out IntPtr exceptionPtr);
@@ -55,20 +60,16 @@ namespace HovelHouse.CloudKit
 
         // Properties
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern bool NSSortDescriptor_GetPropAscending(HandleRef ptr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSSortDescriptor_GetPropKey(HandleRef ptr);
+
+        
+        [DllImport(dll)]
+        private static extern IntPtr NSSortDescriptor_GetPropReversedSortDescriptor(HandleRef ptr);
 
         
 
@@ -77,17 +78,43 @@ namespace HovelHouse.CloudKit
         internal NSSortDescriptor(IntPtr ptr) : base(ptr) {}
         
         
+        /// <summary>
+        /// </summary>
+        /// <param name="key"></param><param name="ascending"></param>
+        /// <returns>val</returns>
+        public static NSSortDescriptor SortDescriptorWithKey(
+            string key, 
+            bool ascending)
+        { 
+            
+            
+            var val = NSSortDescriptor_sortDescriptorWithKey_ascending(
+                key, 
+                
+                ascending, 
+                out IntPtr exceptionPtr);
+
+            if(exceptionPtr != IntPtr.Zero)
+            {
+                var nativeException = new NSException(exceptionPtr);
+                throw new CloudKitException(nativeException, nativeException.Reason);
+            }
+            
+            return val == IntPtr.Zero ? null : new NSSortDescriptor(val);
+        }
+        
+
+        
         
         
         public NSSortDescriptor(
-            NSCoder coder
+            string key, 
+            bool ascending
             )
         {
-            if(coder == null)
-                throw new ArgumentNullException(nameof(coder));
-            
-            IntPtr ptr = NSSortDescriptor_initWithCoder(
-                coder != null ? HandleRef.ToIntPtr(coder.Handle) : IntPtr.Zero, 
+            IntPtr ptr = NSSortDescriptor_initWithKey_ascending(
+                key, 
+                ascending, 
                 out IntPtr exceptionPtr);
 
             if(exceptionPtr != IntPtr.Zero)
@@ -146,16 +173,23 @@ namespace HovelHouse.CloudKit
         }
 
         
+        /// <value>ReversedSortDescriptor</value>
+        public NSSortDescriptor ReversedSortDescriptor
+        {
+            get 
+            { 
+                IntPtr reversedSortDescriptor = NSSortDescriptor_GetPropReversedSortDescriptor(Handle);
+                return reversedSortDescriptor == IntPtr.Zero ? null : new NSSortDescriptor(reversedSortDescriptor);
+            }
+        }
+
+        
 
         
 
         
         #region IDisposable Support
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern void NSSortDescriptor_Dispose(HandleRef handle);
             
         private bool disposedValue = false; // To detect redundant calls

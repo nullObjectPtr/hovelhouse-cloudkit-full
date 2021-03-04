@@ -15,6 +15,47 @@
 // Init Methods 
 
 // Instance methods 
+extern "C" const char* NSError_stringForUserInfoKey(
+	void* ptr,
+	const char* key,
+    void** exception
+    );
+
+extern "C" long NSError_intForUserInfoKey(
+	void* ptr,
+	const char* key,
+    void** exception
+    );
+
+extern "C" float NSError_floatForUserInfoKey(
+	void* ptr,
+	const char* key,
+    void** exception
+    );
+
+extern "C" void* NSError_recordForUserInfoKey(
+	void* ptr,
+	const char* key,
+    void** exception
+    );
+
+extern "C" void* NSError_errorForUserInfoKey(
+	void* ptr,
+	const char* key,
+    void** exception
+    );
+
+extern "C" const char* NSError_userInfoAsString(
+	void* ptr,
+	void** exception
+    );
+
+extern "C" void* NSError_partialErrorForItemId(
+    const void* ptr,
+    const void* itemId,
+    void** exception
+    );
+
 
 // Void methods 
 

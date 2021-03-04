@@ -213,6 +213,16 @@ void* CKRecord_referenceForKey(
 	return (__bridge_retained void*) val;
 }
 
+double CKRecord_dateForKey(
+    const void* ptr,
+    const char* key
+    )
+{
+    CKRecord* iCKRecord = (__bridge CKRecord*) ptr;
+    NSDate* val = [iCKRecord objectForKey:[NSString stringWithUTF8String:key]];
+    return [val timeIntervalSince1970];
+}
+
 
 //VoidMethods
 void CKRecord_encodeSystemFieldsWithCoder(
@@ -345,6 +355,20 @@ void CKRecord_setDouble_forKey(void* ptr,
     [iCKRecord setObject:[NSNumber numberWithDouble:obj] forKey:[NSString stringWithUTF8String:key]];
 }
 
+void CKRecord_setDate_forKey(
+    void* ptr,
+    double timeIntervalSince1970,
+    const char* key,
+    void** exception)
+{
+    @try {
+        CKRecord* iCKRecord = (__bridge CKRecord*)ptr;
+        [iCKRecord setObject:[[NSDate alloc] initWithTimeIntervalSince1970:timeIntervalSince1970] forKey:[NSString stringWithUTF8String:key]];
+    }
+    @catch(NSException* ex){
+        *exception = (__bridge_retained void*) ex;
+    }
+}
 
 //Properties
 

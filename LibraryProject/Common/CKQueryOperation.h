@@ -2,7 +2,7 @@
 //  CKQueryOperation.h
 //
 //  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
-//  Copyright © 2020 HovelHouseApps. All rights reserved.
+//  Copyright © 2021 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
 //
@@ -40,6 +40,9 @@ extern "C" void* CKQueryOperation_GetPropZoneID(void* ptr);
 extern "C" void CKQueryOperation_SetPropZoneID(void* ptr, void* zoneID, void** exceptionPtr);
 // TODO: HEADERPROPERTYSTRINGARRAYextern "C" void CKQueryOperation_SetPropRecordFetchedHandler(void* ptr, recordFetchedCallback recordFetchedHandler, void** exceptionPtr);
 extern "C" void CKQueryOperation_SetPropQueryCompletionHandler(void* ptr, queryCompletionCallback queryCompletionHandler, void** exceptionPtr);
+
+extern "C" uint CKQueryOperation_GetPropResultsLimit(void* ptr);
+extern "C" void CKQueryOperation_SetPropResultsLimit(void* ptr, uint resultsLimit, void** exceptionPtr);
 
 
 

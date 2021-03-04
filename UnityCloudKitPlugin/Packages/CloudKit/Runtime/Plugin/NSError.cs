@@ -2,7 +2,7 @@
 //  NSError.cs
 //
 //  Created by Jonathan Culp <jonathanculp@gmail.com> on 05/28/2020
-//  Copyright © 2020 HovelHouseApps. All rights reserved.
+//  Copyright © 2021 HovelHouseApps. All rights reserved.
 //  Unauthorized copying of this file, via any medium is strictly prohibited
 //  Proprietary and confidential
 //
@@ -26,6 +26,12 @@ namespace HovelHouse.CloudKit
     public class NSError : CKObject, IDisposable
     {
         #region dll
+        
+        #if UNITY_IPHONE || UNITY_TVOS
+        const string dll = "__Internal";
+        #else
+        const string dll = "HHCloudKitMacOS";
+        #endif
 
         // Class Methods
         
@@ -33,58 +39,48 @@ namespace HovelHouse.CloudKit
         
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_stringForUserInfoKey(
             HandleRef ptr, 
             string key,
             out IntPtr exceptionPtr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern long NSError_intForUserInfoKey(
             HandleRef ptr, 
             string key,
             out IntPtr exceptionPtr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern float NSError_floatForUserInfoKey(
             HandleRef ptr, 
             string key,
             out IntPtr exceptionPtr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_recordForUserInfoKey(
             HandleRef ptr, 
             string key,
             out IntPtr exceptionPtr);
 
         
+        [DllImport(dll)]
+        private static extern IntPtr NSError_errorForUserInfoKey(
+            HandleRef ptr, 
+            string key,
+            out IntPtr exceptionPtr);
+        
         #if UNITY_IPHONE || UNITY_TVOS
         [DllImport("__Internal")]
         #else
         [DllImport("HHCloudKitMacOS")]
         #endif
-        private static extern IntPtr NSError_errorForUserInfoKey(
+        private static extern IntPtr NSError_partialErrorForItemId(
             HandleRef ptr, 
-            string key,
+            HandleRef itemIdPtr,
             out IntPtr exceptionPtr);
 
         
@@ -103,53 +99,29 @@ namespace HovelHouse.CloudKit
 
         // Properties
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern long NSError_GetPropCode(HandleRef ptr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_GetPropLocalizedDescription(HandleRef ptr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_GetPropLocalizedRecoverySuggestion(HandleRef ptr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_GetPropLocalizedFailureReason(HandleRef ptr);
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_GetPropHelpAnchor(HandleRef ptr);
 
         // TODO: DLLPROPERTYSTRINGARRAY
 
         
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern IntPtr NSError_GetPropDomain(HandleRef ptr);
 
         
@@ -282,6 +254,27 @@ namespace HovelHouse.CloudKit
             return val == IntPtr.Zero ? null : new NSError(val);
         }
         
+        // See:
+        // https://developer.apple.com/documentation/cloudkit/ckpartialerrorsbyitemidkey?language=objc
+        // for how this works
+        public NSError PartialErrorForItemId(
+            CKObject itemId)
+        {
+            var val = NSError_partialErrorForItemId(
+                Handle, 
+                itemId.Handle,
+                out var exceptionPtr);
+
+            if(exceptionPtr != IntPtr.Zero)
+            {
+                var nativeException = new NSException(exceptionPtr);
+                throw new CloudKitException(nativeException, nativeException.Reason);
+            }
+            
+            return val == IntPtr.Zero ? null : new NSError(val);
+        }
+        
+        
 
         
         /// <summary>
@@ -379,11 +372,7 @@ namespace HovelHouse.CloudKit
 
         
         #region IDisposable Support
-        #if UNITY_IPHONE || UNITY_TVOS
-        [DllImport("__Internal")]
-        #else
-        [DllImport("HHCloudKitMacOS")]
-        #endif
+        [DllImport(dll)]
         private static extern void NSError_Dispose(HandleRef handle);
             
         private bool disposedValue = false; // To detect redundant calls

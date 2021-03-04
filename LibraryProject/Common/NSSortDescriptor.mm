@@ -13,14 +13,34 @@
 extern "C" {
 
 //ClassMethods
+void* NSSortDescriptor_sortDescriptorWithKey_ascending(
+	const char* key, 
+	bool ascending, 
+	void** exception
+    )
+{
+	@try {
+		NSLog(@"NSSortDescriptor_sortDescriptorWithKey_ascending()");
+	    NSSortDescriptor* val = [NSSortDescriptor sortDescriptorWithKey:[NSString stringWithUTF8String:key] ascending:ascending];
+		return (__bridge_retained void*) val;
+	}
+	@catch(NSException* ex)
+	{
+		*exception = (__bridge_retained void*) ex;
+	}
+
+	return nil;
+}
+
 //InitMethods
-void* NSSortDescriptor_initWithCoder(
-    void* coder,
+void* NSSortDescriptor_initWithKey_ascending(
+    const char* key,
+    bool ascending,
     void** exceptionPtr)
 {
     @try 
     {
-        NSSortDescriptor* iNSSortDescriptor = [[NSSortDescriptor alloc] initWithCoder:(__bridge NSCoder*) coder];
+        NSSortDescriptor* iNSSortDescriptor = [[NSSortDescriptor alloc] initWithKey:[NSString stringWithUTF8String:key] ascending:ascending];
             return (__bridge_retained void*) iNSSortDescriptor;
     }
     @catch(NSException* ex)
@@ -66,6 +86,13 @@ const char* NSSortDescriptor_GetPropKey(void* ptr)
 	NSSortDescriptor* iNSSortDescriptor = (__bridge NSSortDescriptor*) ptr;
 	NSString* val = [iNSSortDescriptor key];
 	return [val UTF8String];
+}
+
+void* NSSortDescriptor_GetPropReversedSortDescriptor(void* ptr)
+{
+	NSSortDescriptor* iNSSortDescriptor = (__bridge NSSortDescriptor*) ptr;
+	NSSortDescriptor* val = [iNSSortDescriptor reversedSortDescriptor];
+	return (__bridge_retained void*) val;
 }
 
 

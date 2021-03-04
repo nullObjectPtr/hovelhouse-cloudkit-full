@@ -63,6 +63,10 @@ extern "C" void* CKRecord_assetForKey(
 extern "C" void* CKRecord_referenceForKey(
     void* ptr,
     const char* key);
+extern "C" double CKRecord_dateForKey(
+    const void* ptr,
+    const char* key
+    );
 
 // Void methods 
 extern "C" void CKRecord_encodeSystemFieldsWithCoder(
@@ -87,6 +91,12 @@ extern "C" void CKRecord_setBuffer_forKey(void* ptr, void* buffer, long bufferLe
 extern "C" void CKRecord_setReference_forKey(
 	void* ptr,
 	void* reference,
+    const char* key,
+    void** exception
+    );
+extern "C" void CKRecord_setDate_forKey(
+    void* ptr,
+    double timeIntervalSince1970,
     const char* key,
     void** exception
     );
