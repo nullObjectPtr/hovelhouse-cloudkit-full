@@ -128,6 +128,32 @@ void* NSError_recordForUserInfoKey(
     return nil;
 }
 
+void* NSError_errorForUserInfoKey(
+    void* ptr,
+    const char* key,
+    void** exception
+    )
+{
+    @try
+    {
+        NSError* iNSError = (__bridge NSError*) ptr;
+        NSString* nsKey = [NSString stringWithUTF8String:key];
+        id val = [[iNSError userInfo] valueForKey:nsKey];
+        if(val == nil)
+        {
+            throw [NSException exceptionWithName:@"UserInfoException" reason:[NSString stringWithFormat:@"no such key %@ found in userInfo dictionary", nsKey] userInfo:nil];
+        }
+        if([val isKindOfClass:[NSError class]] == NO)
+            throw [NSException exceptionWithName:@"UserInfoException" reason:[NSString stringWithFormat:@"userInfo value at key %@ is not a NSError", nsKey] userInfo:nil];
+        return (__bridge_retained void*) val;
+    }
+    @catch(NSException* ex)
+    {
+        *exception = (__bridge_retained void*) ex;
+    }
+    return nil;
+}
+
 void* NSError_partialErrorForItemId(
                                      const void* ptr,
                                      const void* itemIdPtr,
