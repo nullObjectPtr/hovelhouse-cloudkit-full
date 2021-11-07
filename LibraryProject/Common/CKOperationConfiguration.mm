@@ -10,6 +10,7 @@
 #import "CKOperationConfiguration.h"
 #import "Converters.h"
 
+
 extern "C" {
 
 //ClassMethods
@@ -17,17 +18,79 @@ extern "C" {
 //InstanceMethods
 //VoidMethods
 //Properties
-
-bool CKOperationConfiguration_GetPropAllowsCellularAccess(void* ptr)
+bool CKOperationConfiguration_GetPropLongLived(const void* ptr)
 {
-	CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
-	BOOL val = [iCKOperationConfiguration allowsCellularAccess];
-	return val;
+    CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+    BOOL longLived = [iCKOperationConfiguration isLongLived];
+    return longLived;
 }
 
-void CKOperationConfiguration_SetPropAllowsCellularAccess(void* ptr, bool allowsCellularAccess, void** exceptionPtr)
+void CKOperationConfiguration_SetPropLongLived(const void* ptr, bool longLived, const void** exceptionPtr)
 {
-	@try 
+	@try
+	{
+		CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+		[iCKOperationConfiguration setLongLived:longLived];
+	}
+	@catch(NSException* ex) 
+	{
+		*exceptionPtr = (__bridge_retained void*) ex;
+	}
+}
+
+
+double CKOperationConfiguration_GetPropTimeoutIntervalForRequest(const void* ptr)
+{
+    CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+    NSTimeInterval timeoutIntervalForRequest = [iCKOperationConfiguration timeoutIntervalForRequest];
+    return timeoutIntervalForRequest;
+}
+
+void CKOperationConfiguration_SetPropTimeoutIntervalForRequest(const void* ptr, double timeoutIntervalForRequest, const void** exceptionPtr)
+{
+	@try
+	{
+		CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+		[iCKOperationConfiguration setTimeoutIntervalForRequest:timeoutIntervalForRequest];
+	}
+	@catch(NSException* ex) 
+	{
+		*exceptionPtr = (__bridge_retained void*) ex;
+	}
+}
+
+
+double CKOperationConfiguration_GetPropTimeoutIntervalForResource(const void* ptr)
+{
+    CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+    NSTimeInterval timeoutIntervalForResource = [iCKOperationConfiguration timeoutIntervalForResource];
+    return timeoutIntervalForResource;
+}
+
+void CKOperationConfiguration_SetPropTimeoutIntervalForResource(const void* ptr, double timeoutIntervalForResource, const void** exceptionPtr)
+{
+	@try
+	{
+		CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+		[iCKOperationConfiguration setTimeoutIntervalForResource:timeoutIntervalForResource];
+	}
+	@catch(NSException* ex) 
+	{
+		*exceptionPtr = (__bridge_retained void*) ex;
+	}
+}
+
+
+bool CKOperationConfiguration_GetPropAllowsCellularAccess(const void* ptr)
+{
+    CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+    BOOL allowsCellularAccess = [iCKOperationConfiguration allowsCellularAccess];
+    return allowsCellularAccess;
+}
+
+void CKOperationConfiguration_SetPropAllowsCellularAccess(const void* ptr, bool allowsCellularAccess, const void** exceptionPtr)
+{
+	@try
 	{
 		CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
 		[iCKOperationConfiguration setAllowsCellularAccess:allowsCellularAccess];
@@ -38,16 +101,17 @@ void CKOperationConfiguration_SetPropAllowsCellularAccess(void* ptr, bool allows
 	}
 }
 
-void* CKOperationConfiguration_GetPropContainer(void* ptr)
+
+void* CKOperationConfiguration_GetPropContainer(const void* ptr)
 {
-	CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
-	CKContainer* val = [iCKOperationConfiguration container];
-	return (__bridge_retained void*) val;
+    CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+    CKContainer* container = [iCKOperationConfiguration container];
+    return (__bridge void*) container;
 }
 
-void CKOperationConfiguration_SetPropContainer(void* ptr, void* container, void** exceptionPtr)
+void CKOperationConfiguration_SetPropContainer(const void* ptr, void* container, const void** exceptionPtr)
 {
-	@try 
+	@try
 	{
 		CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
 		[iCKOperationConfiguration setContainer:(__bridge CKContainer*) container];
@@ -58,16 +122,17 @@ void CKOperationConfiguration_SetPropContainer(void* ptr, void* container, void*
 	}
 }
 
-long CKOperationConfiguration_GetPropQualityOfService(void* ptr)
+
+long CKOperationConfiguration_GetPropQualityOfService(const void* ptr)
 {
-	CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
-	NSQualityOfService val = [iCKOperationConfiguration qualityOfService];
-	return val;
+    CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
+    NSQualityOfService qualityOfService = [iCKOperationConfiguration qualityOfService];
+    return qualityOfService;
 }
 
-void CKOperationConfiguration_SetPropQualityOfService(void* ptr, long qualityOfService, void** exceptionPtr)
+void CKOperationConfiguration_SetPropQualityOfService(const void* ptr, long qualityOfService, const void** exceptionPtr)
 {
-	@try 
+	@try
 	{
 		CKOperationConfiguration* iCKOperationConfiguration = (__bridge CKOperationConfiguration*) ptr;
 		[iCKOperationConfiguration setQualityOfService:(NSQualityOfService)qualityOfService];
@@ -79,6 +144,8 @@ void CKOperationConfiguration_SetPropQualityOfService(void* ptr, long qualityOfS
 }
 
 
+
+
 void CKOperationConfiguration_Dispose(void* ptr)
 {
     CKOperationConfiguration* val = (__bridge CKOperationConfiguration*) ptr;
@@ -86,7 +153,7 @@ void CKOperationConfiguration_Dispose(void* ptr)
     {
         CFRelease(ptr);
     }
-    //NSLog(@"Dispose...CKOperationConfiguration");
+    NSLog(@"Dispose...CKOperationConfiguration");
 }
 
 }

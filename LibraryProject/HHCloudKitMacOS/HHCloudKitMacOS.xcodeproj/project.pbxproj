@@ -121,8 +121,6 @@
 		AB5584032405EE3E00EE0573 /* NSSortDescriptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB5584012405EE3E00EE0573 /* NSSortDescriptor.mm */; };
 		AB588908240D42E100B10456 /* NSException.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB588906240D42E100B10456 /* NSException.mm */; };
 		AB588909240D42E100B10456 /* NSException.h in Headers */ = {isa = PBXBuildFile; fileRef = AB588907240D42E100B10456 /* NSException.h */; };
-		AB6E111F2738220400432253 /* CKDatabaseSubscription.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB6E111D2738220400432253 /* CKDatabaseSubscription.mm */; };
-		AB6E11202738220500432253 /* CKDatabaseSubscription.h in Headers */ = {isa = PBXBuildFile; fileRef = AB6E111E2738220400432253 /* CKDatabaseSubscription.h */; };
 		AB81C342248D445F0003242F /* ICloudNotificationsMacOs.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB81C340248D445E0003242F /* ICloudNotificationsMacOs.mm */; };
 		AB81C343248D445F0003242F /* ICloudNotificationsMacOs.h in Headers */ = {isa = PBXBuildFile; fileRef = AB81C341248D445E0003242F /* ICloudNotificationsMacOs.h */; };
 		ABE7A94024833A1A00093195 /* Swizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE7A93E24833A1A00093195 /* Swizzler.m */; };
@@ -264,8 +262,6 @@
 		AB5584012405EE3E00EE0573 /* NSSortDescriptor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSSortDescriptor.mm; path = ../../Common/NSSortDescriptor.mm; sourceTree = "<group>"; };
 		AB588906240D42E100B10456 /* NSException.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NSException.mm; path = ../../Common/NSException.mm; sourceTree = "<group>"; };
 		AB588907240D42E100B10456 /* NSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSException.h; path = ../../Common/NSException.h; sourceTree = "<group>"; };
-		AB6E111D2738220400432253 /* CKDatabaseSubscription.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CKDatabaseSubscription.mm; path = ../../Common/CKDatabaseSubscription.mm; sourceTree = "<group>"; };
-		AB6E111E2738220400432253 /* CKDatabaseSubscription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKDatabaseSubscription.h; path = ../../Common/CKDatabaseSubscription.h; sourceTree = "<group>"; };
 		AB81C340248D445E0003242F /* ICloudNotificationsMacOs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ICloudNotificationsMacOs.mm; path = ../../Common/ICloudNotificationsMacOs.mm; sourceTree = "<group>"; };
 		AB81C341248D445E0003242F /* ICloudNotificationsMacOs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ICloudNotificationsMacOs.h; path = ../../Common/ICloudNotificationsMacOs.h; sourceTree = "<group>"; };
 		ABE7A93E24833A1A00093195 /* Swizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Swizzler.m; path = ../../Common/Swizzler.m; sourceTree = "<group>"; };
@@ -328,8 +324,6 @@
 				AB37ED2823F49B830000F92E /* CKDatabaseNotification.mm */,
 				AB37ECF723F49B810000F92E /* CKDatabaseOperation.h */,
 				AB37ED0523F49B820000F92E /* CKDatabaseOperation.mm */,
-				AB6E111E2738220400432253 /* CKDatabaseSubscription.h */,
-				AB6E111D2738220400432253 /* CKDatabaseSubscription.mm */,
 				AB37ED3023F49B840000F92E /* CKDiscoverUserIdentitiesOperation.h */,
 				AB37ED2723F49B830000F92E /* CKDiscoverUserIdentitiesOperation.mm */,
 				AB37ED2F23F49B840000F92E /* CKFetchDatabaseChangesOperation.h */,
@@ -483,7 +477,6 @@
 				AB81C343248D445F0003242F /* ICloudNotificationsMacOs.h in Headers */,
 				AB37ED6723F49B840000F92E /* CKQueryNotification.h in Headers */,
 				AB37ED8323F49B840000F92E /* CKRecordZoneID.h in Headers */,
-				AB6E11202738220500432253 /* CKDatabaseSubscription.h in Headers */,
 				AB5584022405EE3E00EE0573 /* NSSortDescriptor.h in Headers */,
 				ABE7A97F2483E11D00093195 /* CKFetchSubscriptionsOperation.h in Headers */,
 				AB3111602416E3DC00B655DE /* NSUbiquitousKeyValueStore.h in Headers */,
@@ -591,7 +584,6 @@
 				AB37ED8223F49B840000F92E /* NSCoder.mm in Sources */,
 				AB37ED4B23F49B840000F92E /* CKModifyRecordZonesOperation.mm in Sources */,
 				ABE7A94024833A1A00093195 /* Swizzler.m in Sources */,
-				AB6E111F2738220400432253 /* CKDatabaseSubscription.mm in Sources */,
 				AB37ED6023F49B840000F92E /* CKAcceptSharesOperation.mm in Sources */,
 				AB37ED6323F49B840000F92E /* NSPersonNameComponents.mm in Sources */,
 				ABE7A97C2483E0FF00093195 /* CKRecordZoneSubscription.mm in Sources */,
