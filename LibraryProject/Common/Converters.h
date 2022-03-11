@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CloudKit/CloudKit.h>
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +23,15 @@ NS_ASSUME_NONNULL_BEGIN
 +(void**) NSDictionaryToKeysArray: (NSDictionary*) dictionary;
 +(const long*) ToTypeIdArray:(NSArray<id>*) array;
 +(long) GetTypeId:(id) item;
++(NSString*) CKRecordSavePolicyToString:(CKRecordSavePolicy) savePolicy;
++(NSString*) CKDatabaseScopeToString:(CKDatabaseScope) databaseScope;
++(NSString*) NSQualityOfServiceToString:(NSQualityOfService) qualityOfService;
 @end
 
 NS_ASSUME_NONNULL_END
+
+extern int LogLevel;
+extern int LogLevelNone;
+extern int LogLevelLog;
+extern int LogLevelVerbose;
+extern int LogLevelVeryVerbose;

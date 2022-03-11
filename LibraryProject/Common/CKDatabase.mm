@@ -25,13 +25,19 @@ void CKDatabase_addOperation(
 	@try 
 	{
 		CKDatabase* iCKDatabase = (__bridge CKDatabase*) ptr;
-	    [iCKDatabase addOperation:(__bridge CKDatabaseOperation*) operation];
+        CKDatabaseOperation* iOperation = (__bridge CKDatabaseOperation*) operation;
+        if(LogLevel >= LogLevelLog)
+        {
+            NSLog(@"adding operation with id '%@' to database with scope '%@'",
+                  [iOperation operationID],
+                  [Converters CKDatabaseScopeToString:[iCKDatabase databaseScope]]);
+        }
+	    [iCKDatabase addOperation:iOperation];
 	}
 	@catch(NSException* ex)
 	{
 		*exception = (__bridge_retained void*) ex;
 	}
-	
 }
 
 
@@ -46,14 +52,37 @@ void CKDatabase_fetchRecordWithID_completionHandler(
 	@try 
 	{
 		CKDatabase* iCKDatabase = (__bridge CKDatabase*) ptr;
-	    [iCKDatabase fetchRecordWithID:(__bridge CKRecordID*) recordID completionHandler:^(CKRecord* _record,
+        CKRecordID* iRecordID = (__bridge CKRecordID*) recordID;
+        
+        if(LogLevel >= LogLevelLog)
+        {
+            NSLog(@"database '%@' fetchRecordWithID '%@'",
+                   [Converters CKDatabaseScopeToString:[iCKDatabase databaseScope]],
+                   iRecordID
+                   );
+        }
+        
+	    [iCKDatabase fetchRecordWithID:iRecordID completionHandler:^(CKRecord* _record,
 NSError* _error)
 		{
-			
+            if(LogLevel >= LogLevelLog)
+            {
+                if(_error == nil)
+                {
+                    NSLog(@"fetchRecordWithID - fetched record:'%@'",
+                          _record != nil ? [_record recordID] : @"null"
+                          );
+                }
+                else
+                {
+                    NSLog(@"fetchRecordWithID - failed to fetch record - error:'%@'",
+                          _error != nil ? _error : @"null"
+                          );
+                }
+            }
+            
 			completionHandler(ptr, invocationId, (__bridge_retained void*) _record, (__bridge_retained void*) _error);
-			
-		}
-];
+		}];
 	}
 	@catch(NSException* ex)
 	{

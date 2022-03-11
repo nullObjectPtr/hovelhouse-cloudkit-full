@@ -8,6 +8,12 @@
 
 #import "Converters.h"
 
+int LogLevel = 0;
+int LogLevelNone = 0;
+int LogLevelLog = 1;
+int LogLevelVerbose = 2;
+int LogLevelVeryVerbose;
+
 @implementation Converters
 +(NSArray*) BridgedArray:(void **)arr2 withCount:(long)count
 {
@@ -174,4 +180,53 @@
     
     return -1;
 }
+
++(NSString*) CKRecordSavePolicyToString:(CKRecordSavePolicy)savePolicy
+{
+    switch(savePolicy)
+    {
+        case CKRecordSaveIfServerRecordUnchanged:
+            return @"CKRecordSaveIfServerRecordUnchanged";
+        case CKRecordSaveChangedKeys:
+            return @"CKRecordSaveChangedKeys";
+        case CKRecordSaveAllKeys:
+            return @"CKRecordSaveAllKeys";
+    }
+    
+    return @"";
+}
+
++(NSString*) CKDatabaseScopeToString:(CKDatabaseScope)databaseScope
+{
+    switch(databaseScope)
+    {
+        case CKDatabaseScopePublic:
+            return @"CKDatabaseScopePublic";
+        case CKDatabaseScopeShared:
+            return @"CKDatabaseScopeShared";
+        case CKDatabaseScopePrivate:
+            return @"CKDatabaseScopePrivate";
+    }
+    
+    return @"";
+}
+
++(NSString*) NSQualityOfServiceToString:(NSQualityOfService)qualityOfService
+{
+    switch (qualityOfService) {
+        case NSQualityOfServiceUtility:
+            return @"NSQualityOfServiceUtility";
+        case NSQualityOfServiceUserInitiated:
+            return @"NSQualityOfServiceUserInitiated";
+        case NSQualityOfServiceDefault:
+            return @"NSQualityOfServiceDefault";
+        case NSQualityOfServiceBackground:
+            return @"NSQualityOfServiceBackground";
+        case NSQualityOfServiceUserInteractive:
+            return @"NSQualityOfServiceUserInteractive";
+    }
+    
+    return @"";
+}
+
 @end

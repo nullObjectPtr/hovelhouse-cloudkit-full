@@ -70,4 +70,35 @@ void RemoveNSUbiquityIdentityDidChangeNotificationObserver(void* observerHandle,
     }
 }
 
+void CloudKitPlugin_SetLogLevel(int InLogLevel)
+{
+    if(InLogLevel == LogLevelNone)
+    {
+        NSLog(@"CloudKitPlugin - Log level set to None");
+    }
+    else if(InLogLevel == LogLevelLog)
+    {
+        NSLog(@"CloudKitPlugin - Log level set to log");
+    }
+    else if(InLogLevel == LogLevelVerbose){
+        NSLog(@"CloudKitPlugin - Log level set to verbose");
+    }
+    else if(LogLevelVeryVerbose)
+    {
+        NSLog(@"CloudKitPlugin - Log level set to very verbose");
+    }
+    else
+    {
+        NSLog(@"CloudKitPlugin Invalid log level");
+    }
+
+    LogLevel = InLogLevel;
+}
+
+long CKObject_GetHashCode(void* ptr)
+{
+    id object = (__bridge id)(ptr);
+    return [object hash];
+}
+
 }

@@ -21,6 +21,13 @@ extern "C" {
 void* CKDatabaseOperation_GetPropDatabase(void* ptr)
 {
 	CKDatabaseOperation* iCKDatabaseOperation = (__bridge CKDatabaseOperation*) ptr;
+    if(LogLevel >= LogLevelVerbose)
+    {
+        NSLog(@"'%@':'%@' - GetPropDatabase",
+              [iCKDatabaseOperation class],
+              [iCKDatabaseOperation operationID]
+              );
+    }
 	CKDatabase* val = [iCKDatabaseOperation database];
 	return (__bridge_retained void*) val;
 }
@@ -30,7 +37,15 @@ void CKDatabaseOperation_SetPropDatabase(void* ptr, void* database, void** excep
 	@try 
 	{
 		CKDatabaseOperation* iCKDatabaseOperation = (__bridge CKDatabaseOperation*) ptr;
-		[iCKDatabaseOperation setDatabase:(__bridge CKDatabase*) database];
+        CKDatabase* iDatabase = (__bridge CKDatabase*) database;
+        if(LogLevel >= LogLevelLog)
+        {
+            NSLog(@"'%@':'%@' - SetPropDatabase",
+                  [iCKDatabaseOperation class],
+                  [iCKDatabaseOperation operationID]
+                  );
+        }
+		[iCKDatabaseOperation setDatabase:iDatabase];
 	}
 	@catch(NSException* ex) 
 	{
@@ -44,9 +59,12 @@ void CKDatabaseOperation_Dispose(void* ptr)
     CKDatabaseOperation* val = (__bridge CKDatabaseOperation*) ptr;
     if(val != nil)
     {
+        if(LogLevel >= LogLevelVeryVerbose)
+        {
+            NSLog(@"'%@' '%@' Dispose", [val class], [val operationID]);
+        }
         CFRelease(ptr);
     }
-    //NSLog(@"Dispose...CKDatabaseOperation");
 }
 
 }

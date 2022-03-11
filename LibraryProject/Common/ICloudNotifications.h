@@ -31,4 +31,8 @@ extern "C" void* AddNSUbiquityIdentityDidChangeNotificationObserver(Notification
 
 extern "C" void RemoveNSUbiquityIdentityDidChangeNotificationObserver(void* observerPtr, void** exceptionPtr);
 
+// TODO - move to a differed file
+extern "C" void CloudKitPlugin_SetLogLevel(int LogLevel);
+extern "C" long CKObject_GetHashCode(void* ptr);
+
 

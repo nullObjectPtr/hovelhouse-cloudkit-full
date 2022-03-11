@@ -20,7 +20,7 @@ void* CKOperationGroup_init(
     @try 
     {
         CKOperationGroup* iCKOperationGroup = [[CKOperationGroup alloc] init];
-            return (__bridge_retained void*) iCKOperationGroup;
+        return (__bridge_retained void*) iCKOperationGroup;
     }
     @catch(NSException* ex)
     {
@@ -37,7 +37,7 @@ void* CKOperationGroup_initWithCoder(
     @try 
     {
         CKOperationGroup* iCKOperationGroup = [[CKOperationGroup alloc] initWithCoder:(__bridge NSCoder*) aDecoder];
-            return (__bridge_retained void*) iCKOperationGroup;
+        return (__bridge_retained void*) iCKOperationGroup;
     }
     @catch(NSException* ex)
     {
