@@ -221,7 +221,26 @@ bool NSUbiquitousKeyValueStore_synchronize(
 	return NO;
 }
 
-
+void NSUbiquitousKeyValueStore_getKeys(
+    void* ptr,
+    const void** buffer,
+    long* length,
+    void** exception
+    )
+{
+    @try
+    {
+        NSUbiquitousKeyValueStore* iNSUbiquitousKeyValueStore = (__bridge NSUbiquitousKeyValueStore*) ptr;
+        
+        id val = [[iNSUbiquitousKeyValueStore dictionaryRepresentation] allKeys];
+        *buffer = [Converters NSArrayOfStringsToCArrayOfStringPointers:val];
+        *length = [val count];
+    }
+    @catch(NSException* ex)
+    {
+        *exception = (__bridge_retained void*) ex;
+    }
+}
 
 void NSUbiquitousKeyValueStore_bufferForKey(
     void* ptr,

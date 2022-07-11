@@ -78,6 +78,13 @@ extern "C" bool NSUbiquitousKeyValueStore_synchronize(
 	void** exception
     );
 
+extern "C" void NSUbiquitousKeyValueStore_getKeys(
+    void* ptr,
+    const void** buffer,
+    long* length,
+    void** exception
+    );
+
 extern "C" void NSUbiquitousKeyValueStore_bufferForKey(
     void* ptr,
     const char* key,

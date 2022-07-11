@@ -83,7 +83,7 @@ void CloudKitPlugin_SetLogLevel(int InLogLevel)
     else if(InLogLevel == LogLevelVerbose){
         NSLog(@"CloudKitPlugin - Log level set to verbose");
     }
-    else if(LogLevelVeryVerbose)
+    else if(InLogLevel == LogLevelVeryVerbose)
     {
         NSLog(@"CloudKitPlugin - Log level set to very verbose");
     }
